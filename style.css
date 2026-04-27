@@ -338,6 +338,11 @@ img{max-width:100%;display:block}
 /* ===== TOOL-SHELL & TOOL-FORM (Phase 3) ===== */
 .tool-shell{background:#fff;border:1px solid var(--gray-200);border-radius:var(--radius-lg);padding:28px;margin:32px 0;box-shadow:var(--shadow-sm)}
 @media(max-width:640px){.tool-shell{padding:20px}}
+.tool-shell-icon{display:block;margin:0 auto 18px;width:200px;height:200px;max-width:55%;background:#fff;border:1px solid var(--gray-200);border-radius:var(--radius);padding:14px}
+.tool-shell-icon img{width:100%;height:100%;object-fit:contain;display:block}
+.tool-shell-icon + h2{text-align:center}
+.tool-shell-icon + h2 + .tool-shell-intro{text-align:center}
+@media(max-width:640px){.tool-shell-icon{width:160px;height:160px;padding:10px;margin-bottom:14px}}
 .tool-shell h2{font-size:1.3rem;margin:0 0 6px;color:var(--anthracite);letter-spacing:-.2px}
 .tool-shell-intro{font-size:.92rem;color:var(--gray-500);margin-bottom:22px}
 
