@@ -57,9 +57,55 @@ Chronologisches Protokoll von Entscheidungen, Annahmen und offenen Punkten.
 
 ---
 
-## Bild-Generierungs-Status
+## 2026-04-27 — Phase 1.1 — Re-Design Startseite (Brand statt Skeleton)
+
+### Auslöser
+
+User-Feedback: "Die Webseite sieht super basic und langweilig aus." Vorlage-Ordner mit
+Klempner-Service-Site als Design-Referenz übergeben (Top-Bar, Hero mit BG-Image,
+Trust-Strip, Service-Cards mit Photos, Section-Anthracite mit CTA, Stats, FAQ,
+Final-CTA mit BG-Image, 4-Spalten-Footer).
+
+### Geliefert
+
+- **6 Brand-Bilder** über Nano Banana generiert (1K, 16:9, alle in `/img/`):
+  - `hero-home.jpg` — dunkle Werkstatt mit oranger Tube auf zentraler Werkbank
+  - `tool-strom.jpg` — NH-Schalter mit oranger Kabelschleife
+  - `tool-werkbank.jpg` — Top-Down Buche-Multiplex mit oranger Bleistift + Maßstab
+  - `tool-licht.jpg` — Industrie-LED-Panels in dunkler Halle
+  - `pillar-planen.jpg` — Top-Down Architektur-Grundriss mit Bleistift + Maßband
+  - `cta-final.jpg` — Werkstatt-Halle mit oranger Werkzeugkiste im Lichtstrahl
+- `style.css` **komplett neu** geschrieben (~13 KB, dichter Vorlage-Stil):
+  - Inter-Font (Google Fonts, preconnect)
+  - Anthrazit `#1f2937` + Werkstatt-Orange `#f59e0b`
+  - Komponenten: Top-Bar, Navbar mit Logo-Icon (Werkbank-SVG inline), Hero mit BG-Image + Tools-Box rechts (overlay), Trust-Strip, Persona-Cards mit Nummern + Icons, Tool-Service-Cards mit Photos, Content-Row mit Accent-Block, Stats-Row, Section-Anthracite mit LocalBoost-CTA, Ratgeber-Cards, FAQ-Akkordeon, Final-CTA mit BG-Image, 4-Spalten-Footer
+- `index.html` komplett neu: 13 Sektionen, alle Links + Schema.org WebSite + FAQPage
+- `tools.js` erweitert: Hamburger-Toggle, FAQ-Akkordeon, Smooth-Scroll, Modal-Logik, automatischer Footer-Jahr
+- `impressum.html` + `datenschutz.html` an neue Klassen-Konvention angepasst (navbar, nav-inner, footer-grid)
+
+### Brand-Entscheidungen
+
+- **Logo-Icon:** stilisierte Werkbank (5 Pfade: Platte, 2 Beine, Querverstrebung, Werkstück oben). Im Header in Anthrazit-Box mit oranger Strich-Färbung; im Footer-Brand invertiert (Orange-Box, anthrazitfarbenes Icon).
+- **Hero-Right:** Tools-Box im Glaskasten-Stil (weiße Karte mit Schatten, 3 Tool-Items mit Mini-Icons). Funktioniert als Trust-Element + Navigations-Shortcut zugleich. Liegt visuell auf dem Hero-BG-Image, gleicher Konversionsdruck wie Google-Bewertungs-Box bei der Vorlage.
+- **Trust-Strip:** 4 Punkte: 16 Themen-Guides, 3 Rechner, Stand 2026, Mobile-optimiert. In Anthrazit, sitzt als Kontinuum direkt unter dem Hero (nahtloser Übergang).
+- **Section-Anthrazit für LocalBoost-CTA:** kontrastiert visuell stark zu den hellen Persona/Tool-Sections darüber. Glas-Card rechts mit Bullet-Liste „Was du bekommst".
+- **Final-CTA:** dunkler Gradient über `cta-final.jpg`, große CTAs für Pillar + Tools.
+
+### Annahmen / offene Punkte
+
+- Persona-Card-3 verlinkt auf `#tools` (Anchor zur Tool-Showcase-Sektion auf gleicher Seite), nicht auf eigene `/tools/`-Seite. In Phase 3 entscheiden, ob `/tools/` eigene Hub-Seite wird.
+- Ratgeber-Cards verlinken auf `/ratgeber/<slug>/` — Spokes existieren noch nicht. 404 bis Phase 4.
+- Pillar-Vorschau verlinkt auf `/pillar/werkstatt-planen-von-null/` — existiert noch nicht. 404 bis Phase 2.
+- LocalBoost-CTA-Button verlinkt auf `/fuer-handwerker/` — existiert noch nicht. 404 bis Phase 5.
+
+### Bild-Generierungs-Status
 
 | Slug | Status |
 |---|---|
-| icon-tool-strom (Test) | ✓ generiert in Phase „Smoke-Test" — `generated_imgs/generated-2026-04-27T09-13-33-079Z-9nt9jq.jpg` |
-| Alle anderen | offen, kommen in Phase 2–4 |
+| `hero-home.jpg` | ✓ Phase 1.1 |
+| `tool-strom.jpg` | ✓ Phase 1.1 |
+| `tool-werkbank.jpg` | ✓ Phase 1.1 |
+| `tool-licht.jpg` | ✓ Phase 1.1 |
+| `pillar-planen.jpg` | ✓ Phase 1.1 |
+| `cta-final.jpg` | ✓ Phase 1.1 |
+| Pillar 2 + 8 Spokes + Tool-Detail-Hero | offen, kommen in Phase 2–4 |

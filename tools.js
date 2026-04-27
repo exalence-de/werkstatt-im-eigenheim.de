@@ -1,16 +1,74 @@
-/* werkstatt-im-eigenheim.de — Tool-Logik & UI-Verdrahtung
- * Phase 1: Skelett. Tool-Berechnungen kommen in Phase 3.
- * Bewusst Vanilla-JS, keine Build-Schritte.
+/* werkstatt-im-eigenheim.de — UI- und Tool-Logik
+ * Phase 1.1: Hamburger, FAQ-Akkordeon, Smooth-Scroll, Lead-Form-Handler, Modal.
+ * Tool-Berechnungen kommen in Phase 3.
  */
 (function () {
   "use strict";
 
   /* ------------------------------------------------------------------ */
-  /* Lead-Form Handler                                                   */
+  /* Mobile-Nav Hamburger                                               */
   /* ------------------------------------------------------------------ */
-  // Alle Formulare mit data-lead-form werden abgefangen und zeigen
-  // ein "Danke"-Modal. Ersetzt der User später durch echtes Endpoint
-  // (GHL / Make.com), tauscht er nur das form-Tag aus.
+  function initMobileNav() {
+    var toggle = document.querySelector("[data-nav-toggle]");
+    var menu = document.querySelector("[data-mobile-menu]");
+    if (!toggle || !menu) return;
+
+    toggle.addEventListener("click", function () {
+      var isOpen = menu.classList.toggle("is-open");
+      toggle.classList.toggle("is-open", isOpen);
+      toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      document.body.style.overflow = isOpen ? "hidden" : "";
+    });
+
+    menu.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        menu.classList.remove("is-open");
+        toggle.classList.remove("is-open");
+        toggle.setAttribute("aria-expanded", "false");
+        document.body.style.overflow = "";
+      });
+    });
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* FAQ-Akkordeon                                                       */
+  /* ------------------------------------------------------------------ */
+  function initFaq() {
+    var items = document.querySelectorAll("[data-faq]");
+    items.forEach(function (item) {
+      var btn = item.querySelector("[data-faq-toggle]");
+      if (!btn) return;
+      btn.addEventListener("click", function () {
+        var wasOpen = item.classList.contains("is-open");
+        items.forEach(function (i) {
+          i.classList.remove("is-open");
+        });
+        if (!wasOpen) item.classList.add("is-open");
+      });
+    });
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* Smooth-Scroll für Anchor-Links                                      */
+  /* ------------------------------------------------------------------ */
+  function initSmoothScroll() {
+    document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+      var href = link.getAttribute("href");
+      if (href.length < 2) return;
+      link.addEventListener("click", function (e) {
+        var target = document.querySelector(href);
+        if (!target) return;
+        e.preventDefault();
+        var navOffset = 90;
+        var top = target.getBoundingClientRect().top + window.pageYOffset - navOffset;
+        window.scrollTo({ top: top, behavior: "smooth" });
+      });
+    });
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* Lead-Form-Handler (Platzhalter, zeigt Danke-Modal)                  */
+  /* ------------------------------------------------------------------ */
   function initLeadForms() {
     var forms = document.querySelectorAll("form[data-lead-form], form[data-pdf-capture]");
     forms.forEach(function (form) {
@@ -44,7 +102,7 @@
     var modal = document.querySelector("[data-thankyou-modal]");
     if (!modal) return;
     modal.addEventListener("click", function (e) {
-      if (e.target === modal || e.target.matches("[data-modal-close]")) {
+      if (e.target === modal || e.target.closest("[data-modal-close]")) {
         closeModal(modal);
       }
     });
@@ -56,22 +114,8 @@
   }
 
   /* ------------------------------------------------------------------ */
-  /* Mobile-Nav-Toggle                                                   */
-  /* ------------------------------------------------------------------ */
-  function initMobileNav() {
-    var toggle = document.querySelector("[data-nav-toggle]");
-    var nav = document.querySelector("[data-main-nav]");
-    if (!toggle || !nav) return;
-    toggle.addEventListener("click", function () {
-      var isOpen = nav.classList.toggle("is-open");
-      toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-    });
-  }
-
-  /* ------------------------------------------------------------------ */
   /* PDF-Capture-Trigger                                                 */
   /* ------------------------------------------------------------------ */
-  // Buttons mit data-pdf-trigger öffnen das Capture-Form-Modal.
   function initPdfTriggers() {
     var triggers = document.querySelectorAll("[data-pdf-trigger]");
     var captureModal = document.querySelector("[data-pdf-modal]");
@@ -86,23 +130,31 @@
     });
 
     captureModal.addEventListener("click", function (e) {
-      if (e.target === captureModal || e.target.matches("[data-modal-close]")) {
+      if (e.target === captureModal || e.target.closest("[data-modal-close]")) {
         closeModal(captureModal);
       }
     });
   }
 
+  /* ------------------------------------------------------------------ */
+  /* Footer-Jahr automatisch                                             */
+  /* ------------------------------------------------------------------ */
+  function initYear() {
+    var nodes = document.querySelectorAll("[data-year]");
+    var year = new Date().getFullYear();
+    nodes.forEach(function (n) { n.textContent = year; });
+  }
+
   /* ================================================================== */
   /* Tool 1: Strombedarfs-Rechner                                        */
-  /* Phase 3 implementiert — Skelett für Phase 1                         */
   /* ================================================================== */
   function initStrombedarfsRechner(root) {
     if (!root) return;
     // TODO Phase 3:
     // - Geräte-Watt aus Checkboxen + Stückzahl summieren
     // - 230V/400V-Strom berechnen
-    // - Stromkreise (16A je Kreis) ceil(summeW/3680)
-    // - Drehstrom-Empfehlung wenn summeW>7000 oder Einzelgerät>3500W
+    // - Stromkreise (16A je Kreis)
+    // - Drehstrom-Empfehlung
     // - Kabelquerschnitt + FI-Empfehlung
     // - YMYL-Hinweis (1×) "Endinstallation durch Elektriker"
   }
@@ -112,14 +164,7 @@
   /* ================================================================== */
   function initWerkbankKonfigurator(root) {
     if (!root) return;
-    // TODO Phase 3:
-    // - Materialliste aus Länge × Tiefe × Stärke
-    // - Untergestell-Vierkantholz
-    // - Schubladen-Beschläge
-    // - Kosten-Spannweite Min/Max je Material
-    // - Bauzeit aus Konfiguration
-    // - Werkzeugliste statisch
-    // - Höhe-Empfehlung aus Körpergröße
+    // TODO Phase 3
   }
 
   /* ================================================================== */
@@ -127,21 +172,20 @@
   /* ================================================================== */
   function initWerkstattbeleuchtungRechner(root) {
     if (!root) return;
-    // TODO Phase 3:
-    // - lumenGesamt = m² × Lux × Faktor(Deckenhöhe)
-    // - anzahlPanels = ceil(lumenGesamt / 5000)
-    // - Farbtemperatur + CRI nach Tätigkeit
-    // - Stromkosten/Jahr (40W × 4h × 365 × Anzahl × 0,35€/kWh)
+    // TODO Phase 3
   }
 
   /* ------------------------------------------------------------------ */
   /* Bootstrap                                                           */
   /* ------------------------------------------------------------------ */
   document.addEventListener("DOMContentLoaded", function () {
+    initMobileNav();
+    initFaq();
+    initSmoothScroll();
     initLeadForms();
     initModal();
-    initMobileNav();
     initPdfTriggers();
+    initYear();
 
     initStrombedarfsRechner(document.querySelector('[data-tool="strombedarf"]'));
     initWerkbankKonfigurator(document.querySelector('[data-tool="werkbank"]'));

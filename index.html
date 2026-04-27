@@ -4,196 +4,697 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>werkstatt-im-eigenheim.de — Bau dir die Werkstatt, die du dir schon immer gewünscht hast</title>
-  <meta name="description" content="Vom ersten Grundriss bis zur fertigen Werkbank — Tools, Maße und Konfiguratoren für die Werkstatt im Eigenheim.">
+  <meta name="description" content="Vom ersten Grundriss bis zur fertigen Werkbank — Tools, Maße und Konfiguratoren für die Werkstatt im Eigenheim. Strom, Werkbank, Beleuchtung, Boden, Belüftung — alles durchgerechnet.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://werkstatt-im-eigenheim.de/">
-  <meta property="og:title" content="werkstatt-im-eigenheim.de">
-  <meta property="og:description" content="Vom ersten Grundriss bis zur fertigen Werkbank — Tools, Maße und Konfiguratoren für die Werkstatt im Eigenheim.">
+  <meta property="og:title" content="werkstatt-im-eigenheim.de — Werkstatt selber bauen">
+  <meta property="og:description" content="Vom ersten Grundriss bis zur fertigen Werkbank — Tools, Maße und Konfiguratoren.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://werkstatt-im-eigenheim.de/">
+  <meta property="og:image" content="https://werkstatt-im-eigenheim.de/img/hero-home.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "werkstatt-im-eigenheim.de",
+    "url": "https://werkstatt-im-eigenheim.de/",
+    "description": "Tools, Maße und Konfiguratoren für die Werkstatt im Eigenheim."
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"Was kostet eine eigene Werkstatt im Eigenheim?","acceptedAnswer":{"@type":"Answer","text":"Eine einfache 16 m² Werkstatt mit selbstgebauter Werkbank und Standard-Beleuchtung liegt bei 2.500–4.000 € reinen Materialkosten. Mit Drehstrom-Anschluss, Bodenbeschichtung und Heizung kommen 1.500–3.500 € dazu. Pro Quadratmeter rechnen wir realistisch mit 250–450 € Materialkosten in 2026."}},
+      {"@type":"Question","name":"Welche Mindestgröße braucht eine Werkstatt?","acceptedAnswer":{"@type":"Answer","text":"Für reine Hobby-Tätigkeiten (Modellbau, kleine Reparaturen) reichen 8–10 m². Für Holzbearbeitung mit Tischkreissäge und Hobel solltest du mindestens 16 m² einplanen. Wer KFZ-Schrauben oder größere Projekte machen will, braucht 24 m² aufwärts."}},
+      {"@type":"Question","name":"Brauche ich Drehstrom in der Werkstatt?","acceptedAnswer":{"@type":"Answer","text":"Drehstrom (400 V) lohnt sich, sobald du Tischkreissäge, Hobel oder Schweißgerät MIG/MAG einsetzt. Geräte über 3,5 kW laufen sonst über das normale Hausnetz oft instabil. Unser Strombedarfs-Rechner gibt dir die Empfehlung anhand deiner Geräteliste."}},
+      {"@type":"Question","name":"Welche Werkbankhöhe ist die richtige?","acceptedAnswer":{"@type":"Answer","text":"Faustregel: Werkbankhöhe ≈ Ellbogenhöhe minus 5–10 cm bei stehender Arbeit. Für Krafteinsatz (Hobeln, Feilen) lieber 15 cm tiefer. Bei 1,80 m Körpergröße landet das bei ca. 90 cm. Konkrete Werte je Körpergröße findest du im Werkbank-Konfigurator."}}
+    ]
+  }
+  </script>
 </head>
 <body>
-  <header class="site-header">
-    <div class="site-header__inner">
-      <a href="/" class="site-logo">
-        werkstatt<span class="site-logo__accent">·</span>im-eigenheim
+
+  <!-- ===== TOP BAR ===== -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-bar-left">
+        <div class="top-bar-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          16 Themen-Guides &amp; 3 Rechner
+        </div>
+        <div class="top-bar-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          100 % kostenlos
+        </div>
+        <div class="top-bar-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Echte Maße &amp; Werkstoffe — keine Stockfoto-Sprache
+        </div>
+      </div>
+      <div class="top-bar-right">
+        <span>Du bist Handwerker?</span>
+        <a href="/fuer-handwerker/" class="accent">Mehr Aufträge in deiner Region →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="/" class="nav-logo">
+        <div class="nav-logo-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9h18"/>
+            <path d="M5 9v11"/>
+            <path d="M19 9v11"/>
+            <path d="M5 14h14"/>
+            <path d="M9 4h6l-1 5h-4z"/>
+          </svg>
+        </div>
+        <div class="nav-logo-text">
+          <strong>werkstatt-im-eigenheim</strong>
+          <span>Tools · Maße · Konfiguratoren</span>
+        </div>
       </a>
-      <button type="button" class="nav-toggle" data-nav-toggle aria-label="Navigation öffnen" aria-expanded="false">
-        <span class="nav-toggle__icon"></span>
+      <ul class="nav-links">
+        <li><a href="/pillar/werkstatt-planen-von-null/">Werkstatt planen</a></li>
+        <li><a href="/pillar/werkstatt-einrichten-bestand/">Werkstatt einrichten</a></li>
+        <li><a href="#tools">Tools</a></li>
+        <li><a href="/ratgeber/">Ratgeber</a></li>
+      </ul>
+      <div class="nav-right">
+        <a href="#tools" class="btn btn-orange nav-cta">
+          Tools öffnen
+        </a>
+      </div>
+      <button class="hamburger" id="hamburger" data-nav-toggle aria-label="Menü öffnen" aria-expanded="false">
+        <span></span><span></span><span></span>
       </button>
-      <nav class="main-nav" data-main-nav aria-label="Hauptnavigation">
-        <ul class="main-nav__list">
-          <li><a class="main-nav__link" href="/pillar/werkstatt-planen-von-null/">Werkstatt planen</a></li>
-          <li><a class="main-nav__link" href="/pillar/werkstatt-einrichten-bestand/">Werkstatt einrichten</a></li>
-          <li><a class="main-nav__link" href="/tools/">Tools</a></li>
-          <li><a class="main-nav__link" href="/ratgeber/">Ratgeber</a></li>
-        </ul>
-      </nav>
     </div>
-  </header>
+  </nav>
 
-  <main>
-    <section class="hero">
-      <div class="container">
-        <h1 class="hero__title">Bau dir die Werkstatt, die du dir schon immer gewünscht hast.</h1>
-        <p class="hero__subtitle">
-          Vom ersten Grundriss bis zur fertigen Werkbank — Tools, Maße und
-          Konfiguratoren für die Werkstatt im Eigenheim.
-        </p>
-        <p class="text-muted">
-          Die Seite ist gerade im Aufbau. In den nächsten Tagen kommen die
-          Pillar-Guides, die drei Tools und der komplette Ratgeber-Bereich
-          online.
-        </p>
-      </div>
-    </section>
+  <div class="mobile-menu" id="mobileMenu" data-mobile-menu>
+    <a href="/pillar/werkstatt-planen-von-null/">Werkstatt planen</a>
+    <a href="/pillar/werkstatt-einrichten-bestand/">Werkstatt einrichten</a>
+    <a href="#tools">Tools</a>
+    <a href="/ratgeber/">Ratgeber</a>
+    <a href="/fuer-handwerker/">Für Handwerker</a>
+    <a href="#tools" class="btn btn-orange">Tools öffnen</a>
+  </div>
 
-    <section class="section">
-      <div class="container">
-        <h2>Was hier entsteht</h2>
-        <div class="persona-grid">
-          <div class="persona-card">
-            <h3 class="persona-card__title">Werkstatt von Grund auf planen</h3>
-            <p class="persona-card__body">
-              Vom leeren Raum zur fertigen Werkstatt — mit Grundriss, Strom,
-              Boden, Werkbank-Position und Bauphasen-Reihenfolge.
-            </p>
-            <span class="text-muted" style="font-size: var(--font-size-sm);">In Kürze verfügbar</span>
-          </div>
-          <div class="persona-card">
-            <h3 class="persona-card__title">Bestehenden Raum umbauen</h3>
-            <p class="persona-card__body">
-              Garage, Keller oder Schuppen zur Werkstatt machen — mit Lösungen
-              für Feuchtigkeit, Belüftung und Lärm.
-            </p>
-            <span class="text-muted" style="font-size: var(--font-size-sm);">In Kürze verfügbar</span>
-          </div>
-          <div class="persona-card">
-            <h3 class="persona-card__title">Tools & Rechner</h3>
-            <p class="persona-card__body">
-              Strombedarfs-Rechner, Werkbank-Konfigurator und Beleuchtungs-Rechner
-              — mit echten Maßen statt Stockfoto-Geschwurbel.
-            </p>
-            <span class="text-muted" style="font-size: var(--font-size-sm);">In Kürze verfügbar</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <aside class="localboost-box" aria-label="Hinweis für Handwerksbetriebe">
-          <span class="localboost-box__label">Für Handwerker</span>
-          <h3 class="localboost-box__title">Du bist selbst Handwerker?</h3>
-          <p class="localboost-box__body">
-            Wenn du einen eigenen Betrieb hast, kennst du das Problem: im
-            Winter ist es voll, im Sommer ruft kaum jemand an.
-            <strong>LocalBoost</strong> macht deinen Betrieb in deiner Region
-            online sichtbar — mit Bewertungssystem, Google-Optimierung und
-            automatischer Kundenakquise.
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero-bg">
+      <img src="/img/hero-home.jpg" alt="" loading="eager" fetchpriority="high">
+    </div>
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-content">
+          <div class="hero-sub-label">Werkstatt im Eigenheim</div>
+          <h1>Bau dir die Werkstatt, die du dir schon immer <span class="accent">gewünscht hast.</span></h1>
+          <p class="hero-desc">
+            Vom ersten Grundriss bis zur fertigen Werkbank — Tools, Maße und
+            Konfiguratoren statt Stockfoto-Geschwurbel. Mit echten Watt-Werten,
+            Buche-Multiplex-Stärken und CEE-Empfehlungen.
           </p>
-          <a class="localboost-box__cta" href="/fuer-handwerker/">
-            Sichtbarkeits-Analyse anfordern
-          </a>
-        </aside>
+          <div class="hero-buttons">
+            <a href="/pillar/werkstatt-planen-von-null/" class="btn btn-orange">
+              Werkstatt jetzt planen
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+            <a href="#tools" class="btn btn-outline">3 Tools direkt nutzen</a>
+          </div>
+          <div class="hero-features">
+            <div class="hero-feature">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Echte Maße &amp; Werkstoffe
+            </div>
+            <div class="hero-feature">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Mobile-optimiert
+            </div>
+            <div class="hero-feature">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              100 % kostenlos
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="tools-box">
+            <div class="tools-box-header">
+              <div class="tools-box-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+              </div>
+              <div>
+                <h4>Kostenlose Tools</h4>
+                <p>3 Rechner in &lt; 2 Minuten</p>
+              </div>
+            </div>
+            <div class="tools-box-list">
+              <a href="/tools/strombedarfs-rechner/" class="tools-box-item">
+                <span class="tools-box-item-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                </span>
+                <span class="tools-box-item-text">
+                  <strong>Strombedarfs-Rechner</strong>
+                  <span>Lastberechnung &amp; Stromkreise</span>
+                </span>
+                <span class="tools-box-item-arrow">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><polyline points="9 18 15 12 9 6"/></svg>
+                </span>
+              </a>
+              <a href="/tools/werkbank-konfigurator/" class="tools-box-item">
+                <span class="tools-box-item-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h18"/><path d="M5 9v11"/><path d="M19 9v11"/><path d="M5 14h14"/></svg>
+                </span>
+                <span class="tools-box-item-text">
+                  <strong>Werkbank-Konfigurator</strong>
+                  <span>Material, Höhe, Bauzeit</span>
+                </span>
+                <span class="tools-box-item-arrow">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><polyline points="9 18 15 12 9 6"/></svg>
+                </span>
+              </a>
+              <a href="/tools/werkstattbeleuchtung-rechner/" class="tools-box-item">
+                <span class="tools-box-item-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 1 5 12c-1 1-1.5 2-1.5 4h-7c0-2-.5-3-1.5-4A7 7 0 0 1 12 2z"/></svg>
+                </span>
+                <span class="tools-box-item-text">
+                  <strong>Beleuchtungs-Rechner</strong>
+                  <span>Lumen, Panels, Stromkosten</span>
+                </span>
+                <span class="tools-box-item-arrow">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><polyline points="9 18 15 12 9 6"/></svg>
+                </span>
+              </a>
+            </div>
+            <div class="tools-box-foot">
+              Keine Anmeldung. Keine Cookies. Direkt rechnen.
+            </div>
+          </div>
+        </div>
       </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="site-footer__inner">
-      <div class="site-footer__brand-block">
-        <h3>werkstatt-im-eigenheim</h3>
-        <p>
-          Tools, Maße und Konfiguratoren für die Werkstatt im Eigenheim — von
-          der ersten Skizze bis zur fertigen Werkbank.
-        </p>
-        <p>
-          <strong>Du bist selbst Handwerker?</strong>
-          <a href="/fuer-handwerker/" style="color: var(--color-accent);">Mehr Aufträge in deiner Region →</a>
-        </p>
-      </div>
-
-      <form
-        class="lead-form lead-form--footer"
-        action="#"
-        method="post"
-        data-lead-form
-        data-success-message="Danke. Wir melden uns mit deiner kostenlosen Sichtbarkeits-Analyse innerhalb von 24 h."
-        novalidate
-      >
-        <h3 class="lead-form__title">Kostenlose Sichtbarkeits-Analyse</h3>
-        <p class="lead-form__subtitle">
-          Für deinen Handwerksbetrieb. Unverbindlich, in 24 h, per E-Mail.
-        </p>
-
-        <div class="lead-form__row lead-form__row--two">
-          <div class="lead-form__field">
-            <label class="lead-form__label" for="lf-name-footer">Name</label>
-            <input class="lead-form__input" id="lf-name-footer" name="name" type="text" required autocomplete="name">
-          </div>
-          <div class="lead-form__field">
-            <label class="lead-form__label" for="lf-plz-footer">PLZ</label>
-            <input class="lead-form__input" id="lf-plz-footer" name="plz" type="text" inputmode="numeric" pattern="[0-9]{5}" required autocomplete="postal-code">
-          </div>
-        </div>
-
-        <div class="lead-form__field">
-          <label class="lead-form__label" for="lf-email-footer">E-Mail</label>
-          <input class="lead-form__input" id="lf-email-footer" name="email" type="email" required autocomplete="email">
-        </div>
-
-        <div class="lead-form__row lead-form__row--two">
-          <div class="lead-form__field">
-            <label class="lead-form__label lead-form__label--optional" for="lf-tel-footer">Telefon</label>
-            <input class="lead-form__input" id="lf-tel-footer" name="telefon" type="tel" autocomplete="tel">
-          </div>
-          <div class="lead-form__field">
-            <label class="lead-form__label" for="lf-branche-footer">Branche</label>
-            <select class="lead-form__select" id="lf-branche-footer" name="branche" required>
-              <option value="">Bitte wählen…</option>
-              <option>Elektrik</option>
-              <option>Sanitär &amp; Heizung</option>
-              <option>Maler &amp; Stuck</option>
-              <option>Tischler / Schreiner</option>
-              <option>Trockenbau</option>
-              <option>KFZ &amp; Mechanik</option>
-              <option>Garten- &amp; Landschaftsbau</option>
-              <option>Sonstiges</option>
-            </select>
-          </div>
-        </div>
-
-        <button type="submit" class="button button--accent button--block lead-form__submit">
-          Sichtbarkeits-Analyse anfordern
-        </button>
-
-        <p class="lead-form__legal">
-          <!-- TODO: Make.com / GHL Webhook -->
-          Mit dem Absenden bestätigst du, dass wir dich kontaktieren dürfen.
-          Details in der <a href="/datenschutz.html">Datenschutzerklärung</a>.
-        </p>
-      </form>
     </div>
+  </section>
 
-    <div class="site-footer__legal">
-      <span>© <span data-year>2026</span> werkstatt-im-eigenheim.de</span>
-      <a href="/impressum.html">Impressum</a>
-      <a href="/datenschutz.html">Datenschutz</a>
+  <!-- ===== TRUST STRIP ===== -->
+  <section class="trust-strip">
+    <div class="container">
+      <div class="trust-grid">
+        <div class="trust-cell">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          <h4>16 Themen-Guides</h4>
+          <p>Pillar &amp; Spoke-Artikel</p>
+        </div>
+        <div class="trust-cell">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+          <h4>3 Rechner</h4>
+          <p>Strom, Werkbank, Licht</p>
+        </div>
+        <div class="trust-cell">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          <h4>Stand 2026</h4>
+          <p>Aktuelle Preise &amp; Maße</p>
+        </div>
+        <div class="trust-cell">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <h4>Mobile-optimiert</h4>
+          <p>Auf jedem Gerät direkt nutzbar</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PERSONA-SEKTION ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">In welcher Phase bist du?</div>
+        <h2 class="section-title">Drei Wege, deine Werkstatt zu bauen</h2>
+        <p class="section-sub">
+          Egal ob du noch vor dem leeren Raum stehst, eine Garage umbaust oder
+          einfach nur einen Rechner brauchst — wähl deinen Einstieg.
+        </p>
+      </div>
+      <div class="persona-grid">
+        <a class="persona-card" href="/pillar/werkstatt-planen-von-null/">
+          <div class="persona-card-num">01</div>
+          <div class="persona-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 22h20"/><path d="M4 22V10l8-6 8 6v12"/><path d="M9 22V12h6v10"/></svg>
+          </div>
+          <h3>Werkstatt von Grund auf planen</h3>
+          <p>
+            Vom leeren Raum zur fertigen Werkstatt — mit Grundriss, Strom-Plan,
+            Boden-Auswahl, Werkbank-Position und Bauphasen-Reihenfolge.
+          </p>
+          <span class="persona-card-cta">Zum Pillar-Guide</span>
+        </a>
+        <a class="persona-card" href="/pillar/werkstatt-einrichten-bestand/">
+          <div class="persona-card-num">02</div>
+          <div class="persona-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <h3>Bestehenden Raum umbauen</h3>
+          <p>
+            Garage, Keller oder Schuppen zur Werkstatt machen — mit Lösungen
+            für Feuchtigkeit, Belüftung und Lärmschutz.
+          </p>
+          <span class="persona-card-cta">Zum Pillar-Guide</span>
+        </a>
+        <a class="persona-card" href="#tools">
+          <div class="persona-card-num">03</div>
+          <div class="persona-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+          </div>
+          <h3>Nur ein Tool oder Rechner</h3>
+          <p>
+            Strombedarfs-Rechner, Werkbank-Konfigurator oder Beleuchtungs-Rechner
+            — direkt nutzen, in unter 2 Minuten zum Ergebnis.
+          </p>
+          <span class="persona-card-cta">Zur Tool-Übersicht</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TOOL-SHOWCASE ===== -->
+  <section class="section section-gray" id="tools">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">Kostenlose Werkstatt-Tools</div>
+        <h2 class="section-title">Drei Rechner, die dir wirklich was bringen</h2>
+        <p class="section-sub">
+          Keine Anmeldung. Keine Newsletter-Pop-ups. Nur Eingabe, Berechnung,
+          Ergebnis — mit echten Watt-Werten und Material-Spannweiten.
+        </p>
+      </div>
+      <div class="tools-grid">
+        <a class="tool-card" href="/tools/strombedarfs-rechner/">
+          <div class="tool-card-img">
+            <span class="tool-card-meta">— 400 V —</span>
+            <img src="/img/tool-strom.jpg" alt="" loading="lazy">
+          </div>
+          <div class="tool-card-body">
+            <h3>Strombedarfs-Rechner</h3>
+            <p>
+              Häkchen bei deinen Geräten setzen → bekommst maximale Last in
+              W/A, Drehstrom-Empfehlung, Anzahl Stromkreise und Kabelquerschnitt.
+            </p>
+            <span class="tool-card-cta">
+              Direkt rechnen
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            </span>
+          </div>
+        </a>
+        <a class="tool-card" href="/tools/werkbank-konfigurator/">
+          <div class="tool-card-img">
+            <span class="tool-card-meta">— 2400 mm —</span>
+            <img src="/img/tool-werkbank.jpg" alt="" loading="lazy">
+          </div>
+          <div class="tool-card-body">
+            <h3>Werkbank-Konfigurator</h3>
+            <p>
+              Länge, Plattenstärke, Material, Schubladen — bekommst Materialliste,
+              Kosten-Spannweite, Bauzeit und Werkzeugliste als PDF.
+            </p>
+            <span class="tool-card-cta">
+              Werkbank konfigurieren
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            </span>
+          </div>
+        </a>
+        <a class="tool-card" href="/tools/werkstattbeleuchtung-rechner/">
+          <div class="tool-card-img">
+            <span class="tool-card-meta">— 5000 lm —</span>
+            <img src="/img/tool-licht.jpg" alt="" loading="lazy">
+          </div>
+          <div class="tool-card-body">
+            <h3>Werkstattbeleuchtung-Rechner</h3>
+            <p>
+              Raumgröße, Tätigkeit, Deckenhöhe — bekommst Lumen-Bedarf, Anzahl
+              LED-Panels, Farbtemperatur und Stromkosten/Jahr.
+            </p>
+            <span class="tool-card-cta">
+              Beleuchtung berechnen
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            </span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PILLAR-1-VORSCHAU (Content-Row) ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="content-row">
+        <div class="content-img">
+          <img src="/img/pillar-planen.jpg" alt="Werkstatt-Grundriss auf dunkler Werkbank">
+          <div class="content-img-accent"></div>
+        </div>
+        <div class="content-text">
+          <div class="section-header left">
+            <div class="section-label">Pillar-Guide #1</div>
+          </div>
+          <h2>Werkstatt selbst planen: Vom leeren Raum zur fertigen Werkstatt</h2>
+          <p>
+            Der komplette Guide für alle, die noch ganz vorne anfangen.
+            Bedarfsanalyse → Größenplanung → Strom → Heizung → Boden →
+            Werkbank-Position → Lagerlogik → Beleuchtungsplan → Bauphasen.
+          </p>
+          <ul class="check-list">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              3 Beispiel-Grundrisse (16, 24, 40 m²)
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Strom-Bilanz mit konkreten Geräte-Watt-Werten
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Bauphasen-Reihenfolge — was zuerst, was später
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Querverweise zu allen 3 Rechnern und 6 Detail-Artikeln
+            </li>
+          </ul>
+          <a href="/pillar/werkstatt-planen-von-null/" class="btn btn-orange">
+            Zum kompletten Pillar-Guide
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STATS / USP-ROW ===== -->
+  <section class="section section-gray">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">Was hier wirklich anders ist</div>
+        <h2 class="section-title">Werkstatt-Inhalte ohne Stockfoto-Geschwurbel</h2>
+      </div>
+      <div class="stats-row">
+        <div class="stat-box">
+          <h3>16<span>+</span></h3>
+          <p>Themen-Guides &amp; Spokes mit echten Maßen</p>
+        </div>
+        <div class="stat-box">
+          <h3>3<span></span></h3>
+          <p>funktionale Rechner statt Affiliate-Listen</p>
+        </div>
+        <div class="stat-box">
+          <h3>0<span>€</span></h3>
+          <p>komplett kostenlos, ohne Anmeldung</p>
+        </div>
+        <div class="stat-box">
+          <h3>2026<span></span></h3>
+          <p>Stand der Preise und Materialien</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LOCALBOOST-CTA-SEKTION ===== -->
+  <section class="section section-anthracite">
+    <div class="container">
+      <div class="localboost-cta">
+        <div class="localboost-cta-text">
+          <div class="section-header left" style="margin-bottom:0">
+            <div class="section-label" style="color:var(--orange)">Für Handwerksbetriebe</div>
+          </div>
+          <h2>Du bist selbst Handwerker?<br>Dann ist <span style="color:var(--orange)">LocalBoost</span> für dich.</h2>
+          <p>
+            Wenn du einen eigenen Betrieb hast, kennst du das Problem: im
+            Winter ist es voll, im Sommer ruft kaum jemand an. LocalBoost macht
+            deinen Betrieb in deiner Region online sichtbar — mit
+            Bewertungssystem, Google-Optimierung und automatischer Kundenakquise.
+          </p>
+          <a href="/fuer-handwerker/" class="btn btn-orange">
+            Sichtbarkeits-Analyse anfordern
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </div>
+        <div class="localboost-cta-card">
+          <h4>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6"/><path d="M12 22v-6"/><circle cx="12" cy="12" r="4"/><path d="M2 12h6"/><path d="M22 12h-6"/></svg>
+            Was du bekommst
+          </h4>
+          <ul>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Kostenlose Sichtbarkeits-Analyse deines Betriebs
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Bewertungs-System mit automatischen Anfragen
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Google-Profil-Optimierung &amp; Local-SEO
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Auswertung in 24 Stunden, unverbindlich
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RATGEBER-VORSCHAU (3 Spokes) ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">Detail-Themen</div>
+        <h2 class="section-title">Drei Themen, die viele unterschätzen</h2>
+        <p class="section-sub">
+          Auf den Pillar-Guides geht es um die große Linie. In den Spoke-Artikeln
+          steigen wir tief in einzelne Themen ein.
+        </p>
+      </div>
+      <div class="ratgeber-grid">
+        <a class="ratgeber-card" href="/ratgeber/werkbank-hoehe-richtige-arbeitshoehe/">
+          <div class="ratgeber-card-img">
+            <img src="/img/tool-werkbank.jpg" alt="" loading="lazy">
+          </div>
+          <div class="ratgeber-card-body">
+            <span class="ratgeber-card-cat">Konstruktion</span>
+            <h3>Werkbank-Höhe nach Körpergröße</h3>
+            <p>
+              Faustformel, Tabelle Körpergröße × Höhe und Empfehlungen für
+              stehende vs. sitzende Arbeit.
+            </p>
+            <span class="ratgeber-card-cta">Weiterlesen →</span>
+          </div>
+        </a>
+        <a class="ratgeber-card" href="/ratgeber/cee-steckdose-werkstatt-installation/">
+          <div class="ratgeber-card-img">
+            <img src="/img/tool-strom.jpg" alt="" loading="lazy">
+          </div>
+          <div class="ratgeber-card-body">
+            <span class="ratgeber-card-cat">Technik</span>
+            <h3>CEE-Steckdose: 16 A, 32 A oder 63 A?</h3>
+            <p>
+              Wann welche Stromstärke nötig ist und wie du den Elektriker
+              richtig vorbereitest.
+            </p>
+            <span class="ratgeber-card-cta">Weiterlesen →</span>
+          </div>
+        </a>
+        <a class="ratgeber-card" href="/ratgeber/werkstatt-bodenbeschichtung-vergleich/">
+          <div class="ratgeber-card-img">
+            <img src="/img/cta-final.jpg" alt="" loading="lazy">
+          </div>
+          <div class="ratgeber-card-body">
+            <span class="ratgeber-card-cat">Konstruktion</span>
+            <h3>Bodenbeschichtung im Vergleich</h3>
+            <p>
+              Epoxidharz, 2K-PU, Hartstoffestrich, Vinyl — Vergleichstabelle
+              mit Kosten, Haltbarkeit und Aufwand.
+            </p>
+            <span class="ratgeber-card-cta">Weiterlesen →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="section section-gray" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">Häufige Fragen</div>
+        <h2 class="section-title">FAQ — was die meisten zuerst fragen</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item is-open" data-faq>
+          <button class="faq-q" data-faq-toggle>
+            Was kostet eine eigene Werkstatt im Eigenheim?
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">
+            Eine einfache 16 m² Werkstatt mit selbstgebauter Werkbank und
+            Standard-Beleuchtung liegt bei 2.500–4.000 € reinen Materialkosten.
+            Mit Drehstrom-Anschluss, Bodenbeschichtung und Heizung kommen
+            1.500–3.500 € dazu. Pro Quadratmeter rechnen wir realistisch mit
+            250–450 € Materialkosten in 2026.
+          </div></div>
+        </div>
+        <div class="faq-item" data-faq>
+          <button class="faq-q" data-faq-toggle>
+            Welche Mindestgröße braucht eine Werkstatt?
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">
+            Für reine Hobby-Tätigkeiten (Modellbau, kleine Reparaturen) reichen
+            8–10 m². Für Holzbearbeitung mit Tischkreissäge und Hobel solltest
+            du mindestens 16 m² einplanen. Wer KFZ-Schrauben oder größere
+            Projekte machen will, braucht 24 m² aufwärts.
+          </div></div>
+        </div>
+        <div class="faq-item" data-faq>
+          <button class="faq-q" data-faq-toggle>
+            Brauche ich Drehstrom (400 V) in der Werkstatt?
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">
+            Drehstrom (400 V) lohnt sich, sobald du Tischkreissäge, Hobel oder
+            Schweißgerät MIG/MAG einsetzt. Geräte über 3,5 kW laufen sonst
+            über das normale Hausnetz oft instabil. Unser
+            <a href="/tools/strombedarfs-rechner/">Strombedarfs-Rechner</a>
+            gibt dir die Empfehlung anhand deiner Geräteliste.
+          </div></div>
+        </div>
+        <div class="faq-item" data-faq>
+          <button class="faq-q" data-faq-toggle>
+            Welche Werkbankhöhe ist die richtige?
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">
+            Faustregel: Werkbankhöhe ≈ Ellbogenhöhe minus 5–10 cm bei stehender
+            Arbeit. Für Krafteinsatz (Hobeln, Feilen) lieber 15 cm tiefer. Bei
+            1,80 m Körpergröße landet das bei ca. 90 cm. Konkrete Werte je
+            Körpergröße findest du im
+            <a href="/tools/werkbank-konfigurator/">Werkbank-Konfigurator</a>.
+          </div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FINAL CTA ===== -->
+  <section class="cta-final">
+    <div class="cta-final-bg">
+      <img src="/img/cta-final.jpg" alt="" loading="lazy">
+    </div>
+    <div class="container">
+      <div class="cta-final-inner">
+        <div class="section-label">Loslegen</div>
+        <h2>Bereit, deine Werkstatt zu planen?</h2>
+        <p>
+          Egal ob du noch ganz am Anfang stehst oder schon den Sicherungskasten
+          im Kopf rechnest — starte mit dem Pillar-Guide oder spring direkt
+          in einen Rechner.
+        </p>
+        <div class="cta-final-row">
+          <a href="/pillar/werkstatt-planen-von-null/" class="btn btn-orange btn-lg">
+            Pillar-Guide öffnen
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+          <a href="#tools" class="btn btn-outline btn-lg">3 Tools ansehen</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="nav-logo">
+            <div class="nav-logo-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 9h18"/>
+                <path d="M5 9v11"/>
+                <path d="M19 9v11"/>
+                <path d="M5 14h14"/>
+                <path d="M9 4h6l-1 5h-4z"/>
+              </svg>
+            </div>
+            <div class="nav-logo-text">
+              <strong>werkstatt-im-eigenheim</strong>
+              <span>Tools · Maße · Konfiguratoren</span>
+            </div>
+          </a>
+          <p>
+            Vom ersten Grundriss bis zur fertigen Werkbank — Tools, Maße und
+            Konfiguratoren für die Werkstatt im Eigenheim. Stand 2026.
+          </p>
+          <div class="footer-handwerker-cta">
+            <strong>Du bist Handwerker?</strong>
+            <a href="/fuer-handwerker/">Mehr Aufträge in deiner Region →</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Pillars</h4>
+          <ul>
+            <li><a href="/pillar/werkstatt-planen-von-null/">Werkstatt von Grund auf planen</a></li>
+            <li><a href="/pillar/werkstatt-einrichten-bestand/">Bestehenden Raum umbauen</a></li>
+            <li><a href="/ratgeber/">Ratgeber-Hub</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Tools</h4>
+          <ul>
+            <li><a href="/tools/strombedarfs-rechner/">Strombedarfs-Rechner</a></li>
+            <li><a href="/tools/werkbank-konfigurator/">Werkbank-Konfigurator</a></li>
+            <li><a href="/tools/werkstattbeleuchtung-rechner/">Beleuchtungs-Rechner</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Mehr</h4>
+          <ul>
+            <li><a href="/fuer-handwerker/">Für Handwerker</a></li>
+            <li><a href="/impressum.html">Impressum</a></li>
+            <li><a href="/datenschutz.html">Datenschutz</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span data-year>2026</span> werkstatt-im-eigenheim.de — Alle Rechte vorbehalten.</span>
+        <div class="footer-bottom-links">
+          <a href="/impressum.html">Impressum</a>
+          <a href="/datenschutz.html">Datenschutz</a>
+        </div>
+      </div>
     </div>
   </footer>
 
-  <div class="modal" data-thankyou-modal aria-hidden="true">
-    <div class="modal__inner" role="dialog" aria-labelledby="thankyou-title">
-      <div class="modal__icon" aria-hidden="true">✓</div>
-      <h3 id="thankyou-title" class="modal__title">Danke!</h3>
-      <p class="modal__body" data-modal-body>
-        Wir haben deine Anfrage erhalten und melden uns innerhalb von 24 h.
-      </p>
-      <button type="button" class="button button--secondary" data-modal-close>
-        Schließen
-      </button>
+  <!-- ===== MODAL (Danke) ===== -->
+  <div class="modal" data-thankyou-modal>
+    <div class="modal-inner" role="dialog" aria-labelledby="thanks-title">
+      <div class="modal-icon">✓</div>
+      <h3 id="thanks-title">Danke!</h3>
+      <p data-modal-body>Wir haben deine Anfrage erhalten und melden uns innerhalb von 24 h.</p>
+      <button type="button" class="btn btn-anthracite" data-modal-close>Schließen</button>
     </div>
   </div>
 

@@ -5,32 +5,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Impressum — werkstatt-im-eigenheim.de</title>
   <meta name="description" content="Impressum von werkstatt-im-eigenheim.de.">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="noindex, follow">
   <link rel="canonical" href="https://werkstatt-im-eigenheim.de/impressum.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="site-header__inner">
-      <a href="/" class="site-logo">
-        werkstatt<span class="site-logo__accent">·</span>im-eigenheim
+
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="/" class="nav-logo">
+        <div class="nav-logo-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9h18"/><path d="M5 9v11"/><path d="M19 9v11"/><path d="M5 14h14"/><path d="M9 4h6l-1 5h-4z"/>
+          </svg>
+        </div>
+        <div class="nav-logo-text">
+          <strong>werkstatt-im-eigenheim</strong>
+          <span>Tools · Maße · Konfiguratoren</span>
+        </div>
       </a>
-      <button type="button" class="nav-toggle" data-nav-toggle aria-label="Navigation öffnen" aria-expanded="false">
-        <span class="nav-toggle__icon"></span>
+      <ul class="nav-links">
+        <li><a href="/pillar/werkstatt-planen-von-null/">Werkstatt planen</a></li>
+        <li><a href="/pillar/werkstatt-einrichten-bestand/">Werkstatt einrichten</a></li>
+        <li><a href="/#tools">Tools</a></li>
+        <li><a href="/ratgeber/">Ratgeber</a></li>
+      </ul>
+      <button class="hamburger" data-nav-toggle aria-label="Menü öffnen" aria-expanded="false">
+        <span></span><span></span><span></span>
       </button>
-      <nav class="main-nav" data-main-nav aria-label="Hauptnavigation">
-        <ul class="main-nav__list">
-          <li><a class="main-nav__link" href="/pillar/werkstatt-planen-von-null/">Werkstatt planen</a></li>
-          <li><a class="main-nav__link" href="/pillar/werkstatt-einrichten-bestand/">Werkstatt einrichten</a></li>
-          <li><a class="main-nav__link" href="/tools/">Tools</a></li>
-          <li><a class="main-nav__link" href="/ratgeber/">Ratgeber</a></li>
-        </ul>
-      </nav>
     </div>
-  </header>
+  </nav>
+
+  <div class="mobile-menu" data-mobile-menu>
+    <a href="/pillar/werkstatt-planen-von-null/">Werkstatt planen</a>
+    <a href="/pillar/werkstatt-einrichten-bestand/">Werkstatt einrichten</a>
+    <a href="/#tools">Tools</a>
+    <a href="/ratgeber/">Ratgeber</a>
+    <a href="/fuer-handwerker/">Für Handwerker</a>
+  </div>
 
   <main>
-    <article class="article-content container">
+    <article class="article-content">
       <h1>Impressum</h1>
 
       <!-- TODO: ausfüllen mit echten Pflichtangaben (§ 5 TMG) -->
@@ -56,16 +74,16 @@
 
       <h2>Haftung für Inhalte</h2>
       <p>
-        Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die
-        Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir
-        jedoch keine Gewähr übernehmen.
+        Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für
+        die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können
+        wir jedoch keine Gewähr übernehmen.
       </p>
 
       <h2>Haftung für Links</h2>
       <p>
         Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren
-        Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden
-        Inhalte auch keine Gewähr übernehmen.
+        Inhalte wir keinen Einfluss haben. Deshalb können wir für diese
+        fremden Inhalte auch keine Gewähr übernehmen.
       </p>
 
       <h2>Urheberrecht</h2>
@@ -76,20 +94,55 @@
     </article>
   </main>
 
-  <footer class="site-footer">
-    <div class="site-footer__inner">
-      <div class="site-footer__brand-block">
-        <h3>werkstatt-im-eigenheim</h3>
-        <p>
-          Tools, Maße und Konfiguratoren für die Werkstatt im Eigenheim — von
-          der ersten Skizze bis zur fertigen Werkbank.
-        </p>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="nav-logo">
+            <div class="nav-logo-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 9h18"/><path d="M5 9v11"/><path d="M19 9v11"/><path d="M5 14h14"/><path d="M9 4h6l-1 5h-4z"/>
+              </svg>
+            </div>
+            <div class="nav-logo-text">
+              <strong>werkstatt-im-eigenheim</strong>
+              <span>Tools · Maße · Konfiguratoren</span>
+            </div>
+          </a>
+          <p>Vom ersten Grundriss bis zur fertigen Werkbank — Tools, Maße und Konfiguratoren für die Werkstatt im Eigenheim.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Pillars</h4>
+          <ul>
+            <li><a href="/pillar/werkstatt-planen-von-null/">Von Grund auf planen</a></li>
+            <li><a href="/pillar/werkstatt-einrichten-bestand/">Bestand umbauen</a></li>
+            <li><a href="/ratgeber/">Ratgeber</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Tools</h4>
+          <ul>
+            <li><a href="/tools/strombedarfs-rechner/">Strombedarf</a></li>
+            <li><a href="/tools/werkbank-konfigurator/">Werkbank</a></li>
+            <li><a href="/tools/werkstattbeleuchtung-rechner/">Beleuchtung</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Mehr</h4>
+          <ul>
+            <li><a href="/fuer-handwerker/">Für Handwerker</a></li>
+            <li><a href="/impressum.html">Impressum</a></li>
+            <li><a href="/datenschutz.html">Datenschutz</a></li>
+          </ul>
+        </div>
       </div>
-    </div>
-    <div class="site-footer__legal">
-      <span>© <span data-year>2026</span> werkstatt-im-eigenheim.de</span>
-      <a href="/impressum.html">Impressum</a>
-      <a href="/datenschutz.html">Datenschutz</a>
+      <div class="footer-bottom">
+        <span>© <span data-year>2026</span> werkstatt-im-eigenheim.de — Alle Rechte vorbehalten.</span>
+        <div class="footer-bottom-links">
+          <a href="/impressum.html">Impressum</a>
+          <a href="/datenschutz.html">Datenschutz</a>
+        </div>
+      </div>
     </div>
   </footer>
 
