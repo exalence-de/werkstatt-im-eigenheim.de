@@ -91,8 +91,8 @@ img{max-width:100%;display:block}
 .hero{position:relative;min-height:600px;display:flex;align-items:center;overflow:hidden;background:var(--anthracite-deep)}
 .hero-bg{position:absolute;inset:0}
 .hero-bg img{width:100%;height:100%;object-fit:cover}
-.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(100deg,rgba(17,24,39,.82) 0%,rgba(17,24,39,.55) 45%,rgba(17,24,39,.18) 100%)}
-.hero-inner{position:relative;z-index:2;padding:90px 0 100px;max-width:660px}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(95deg,rgba(17,24,39,.92) 0%,rgba(17,24,39,.78) 22%,rgba(17,24,39,.45) 50%,rgba(17,24,39,.08) 82%,rgba(17,24,39,0) 100%)}
+.hero-inner{position:relative;z-index:2;padding:90px 0 100px;max-width:580px}
 .hero-sub-label{font-size:.78rem;font-weight:700;color:var(--orange);text-transform:uppercase;letter-spacing:1.8px;margin-bottom:18px;display:flex;align-items:center;gap:10px}
 .hero-sub-label::before{content:'';width:32px;height:2px;background:var(--orange)}
 .hero h1{font-size:2.95rem;font-weight:800;color:var(--white);line-height:1.08;margin-bottom:20px;letter-spacing:-.6px}
@@ -102,7 +102,7 @@ img{max-width:100%;display:block}
 
 /* Hero-Quicktools (3 Tools direkt im Hero) */
 .hero-quicktools-label{font-size:.72rem;font-weight:700;color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:1.6px;margin-bottom:14px;display:block}
-.hero-quicktools{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:600px}
+.hero-quicktools{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:560px}
 .hero-quicktool{background:#fff;border-radius:12px;padding:16px 14px;text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:10px;transition:transform .2s,box-shadow .2s,background .2s;color:inherit;border:1px solid transparent}
 .hero-quicktool:hover{transform:translateY(-2px);background:var(--orange-light);box-shadow:0 12px 32px rgba(0,0,0,.45);border-color:var(--orange)}
 .hero-quicktool-icon{width:56px;height:56px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
