@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Beleuchtungs-Rechner für die Werkstatt — werkstatt-im-eigenheim.de</title>
+  <meta name="description" content="Werkstatt-Beleuchtung in 2 Minuten durchgerechnet: Lumen-Bedarf, Anzahl LED-Panels, Farbtemperatur, CRI-Wert und Stromkosten pro Jahr.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://werkstatt-im-eigenheim.de/tools/werkstattbeleuchtung-rechner/">
+  <meta property="og:title" content="Beleuchtungs-Rechner für die Werkstatt">
+  <meta property="og:description" content="Lumen, LED-Panels, Farbtemperatur und Stromkosten in 2 Minuten.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://werkstatt-im-eigenheim.de/tools/werkstattbeleuchtung-rechner/">
+  <meta property="og:image" content="https://werkstatt-im-eigenheim.de/img/icon-licht.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-bar-left">
+        <div class="top-bar-item">Werkstatt planen, einrichten und ordentlich ausstatten — von der Skizze bis zur Steckdose.</div>
+      </div>
+      <div class="top-bar-right">
+        <span>Du bist selbst Handwerker?</span>
+        <a href="/fuer-handwerker/" class="accent">Mehr Aufträge in deiner Region →</a>
+      </div>
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="/" class="nav-logo">
+        <div class="nav-logo-icon"><img src="/img/logo-icon.jpg" alt=""></div>
+        <div class="nav-logo-text">
+          <strong>werkstatt-im-eigenheim</strong>
+          <span>Tools · Maße · Konfiguratoren</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/pillar/werkstatt-planen-von-null/">Werkstatt planen</a></li>
+        <li><a href="/pillar/werkstatt-einrichten-bestand/">Werkstatt einrichten</a></li>
+        <li><a href="/#tools" class="is-active">Tools</a></li>
+        <li><a href="/ratgeber/">Ratgeber</a></li>
+      </ul>
+      <button class="hamburger" data-nav-toggle aria-label="Menü öffnen" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" data-mobile-menu>
+    <a href="/pillar/werkstatt-planen-von-null/">Werkstatt planen</a>
+    <a href="/pillar/werkstatt-einrichten-bestand/">Werkstatt einrichten</a>
+    <a href="/#tools">Tools</a>
+    <a href="/ratgeber/">Ratgeber</a>
+    <a href="/fuer-handwerker/">Für Handwerker</a>
+  </div>
+
+  <section class="article-hero">
+    <div class="container">
+      <span class="article-eyebrow">Werkstatt-Tool · Licht</span>
+      <h1>Beleuchtungs-Rechner: Lumen, LED-Panels, Stromkosten</h1>
+      <p class="article-lead">
+        Raumgröße, Tätigkeit und Deckenhöhe rein — du siehst sofort, wie
+        viele LED-Panels du brauchst, welche Farbtemperatur passt und was
+        dich der Strom im Jahr kostet.
+      </p>
+      <div class="article-meta">
+        <span>~2 Min</span><span class="dot">·</span>
+        <span>4 Tätigkeitsstufen</span><span class="dot">·</span>
+        <span>Stromkosten Stand 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <article class="article-content">
+    <p>
+      Beleuchtung wird beim Werkstatt-Aufbau oft an letzter Stelle bedacht
+      — und dann steht da eine fertige Werkstatt, in der man im Halbdämmer
+      arbeitet. Schlechtes Licht ermüdet die Augen, verlangsamt feine
+      Arbeiten und führt im schlimmsten Fall zu Verletzungen, wenn du
+      Werkstücke oder rotierende Maschinen nicht klar siehst. Gute
+      Beleuchtung ist nicht teuer, sie braucht nur Planung.
+    </p>
+    <p>
+      Der Rechner unten arbeitet mit den anerkannten Lux-Empfehlungen für
+      Werkstätten: 200 lx für Grobarbeit, 300 lx für allgemeine
+      Werkstatt-Tätigkeit, 500 lx für Feinarbeit, 750 lx für Lackierung
+      und Farbprüfung. Plus Korrekturfaktor für die Deckenhöhe — höhere
+      Räume schlucken mehr Licht. Du bekommst Lumen-Gesamtbedarf, eine
+      Empfehlung zur Anzahl LED-Panels, die richtige Farbtemperatur und
+      eine ehrliche Schätzung der jährlichen Stromkosten.
+    </p>
+
+    <div class="tool-shell" data-tool="beleuchtung">
+      <h2>Wie groß ist dein Raum, was machst du drin?</h2>
+      <p class="tool-shell-intro">Schiebe den Slider auf deine Raumgröße und wähl Tätigkeit + Deckenhöhe.</p>
+
+      <div class="tool-section">
+        <div class="tool-section-title">Raumgröße</div>
+        <div class="tool-slider-wrap">
+          <input type="range" class="tool-slider" data-slider min="10" max="80" value="20" aria-label="Raumgröße in m²">
+          <span class="tool-slider-value" data-slider-value>20 m²</span>
+        </div>
+      </div>
+
+      <div class="tool-section">
+        <div class="tool-section-title">Was machst du in der Werkstatt?</div>
+        <div class="radio-pill-group" role="radiogroup">
+          <label class="radio-pill"><input type="radio" name="aktivitaet" value="grobarbeit"> Grobarbeit (Sägen, Hobeln)</label>
+          <label class="radio-pill"><input type="radio" name="aktivitaet" value="allgemein" checked> Allgemein (Standard)</label>
+          <label class="radio-pill"><input type="radio" name="aktivitaet" value="feinarbeit"> Feinarbeit / Modellbau</label>
+          <label class="radio-pill"><input type="radio" name="aktivitaet" value="lackierung"> Lackierung / Farbprüfung</label>
+        </div>
+      </div>
+
+      <div class="tool-section">
+        <div class="tool-section-title">Deckenhöhe</div>
+        <div class="radio-pill-group" role="radiogroup">
+          <label class="radio-pill"><input type="radio" name="deckenhoehe" value="2.4" checked> 2,40 m</label>
+          <label class="radio-pill"><input type="radio" name="deckenhoehe" value="2.6"> 2,60 m</label>
+          <label class="radio-pill"><input type="radio" name="deckenhoehe" value="3.0"> 3,00 m</label>
+          <label class="radio-pill"><input type="radio" name="deckenhoehe" value="hoeher"> Höher</label>
+        </div>
+      </div>
+
+      <div class="tool-results" data-tool-results aria-live="polite"></div>
+
+      <div class="tool-pdf-row">
+        <button type="button" class="btn btn-orange" data-pdf-trigger>
+          PDF mit Beleuchtungsplan
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        </button>
+        <p>Wir schicken dir den Plan als PDF — kein Newsletter.</p>
+      </div>
+    </div>
+
+    <h2>Was die Werte bedeuten</h2>
+
+    <h3>Lumen vs. Lux — was ist was?</h3>
+    <p>
+      <strong>Lumen (lm)</strong> ist die gesamte Lichtmenge, die eine
+      Lampe abstrahlt. <strong>Lux (lx)</strong> ist die Helligkeit auf
+      einer Fläche. Faustregel: 1 lx = 1 lm verteilt auf 1 m². Für
+      allgemeine Werkstatt-Tätigkeit brauchst du 300 lx auf der gesamten
+      Arbeitsfläche — bei 20 m² also rund 6.000 Lumen Gesamtleistung. Das
+      sind etwa zwei moderne LED-Panels à 60 × 60 cm.
+    </p>
+
+    <h3>Farbtemperatur (Kelvin)</h3>
+    <p>
+      <strong>4000 K (neutralweiß)</strong> ist der Standard für
+      Werkstätten — neutral, augenschonend, nicht zu kalt. <strong>5000 K
+      (tageslichtweiß)</strong> nimmst du für Feinarbeit, Modellbau und
+      Lackierung — wirkt heller und schärfer, lässt feine Details besser
+      erkennen. Über 6500 K (kaltweiß) wird's unangenehm bläulich.
+      Warmweiß (3000 K) ist Wohnzimmerlicht — in der Werkstatt ungeeignet,
+      weil Farben verfälscht werden.
+    </p>
+
+    <h3>CRI / Farbwiedergabeindex (Ra)</h3>
+    <p>
+      Der CRI-Wert (auch Ra) misst, wie naturgetreu die Lampe Farben
+      darstellt. CRI 100 = Tageslicht. <strong>CRI ≥ 80</strong> reicht
+      für Standard-Werkstatt. <strong>CRI ≥ 90</strong> ist Pflicht für
+      Lackierung, Restaurierung und Modellbau, wo du Farben präzise
+      unterscheiden musst. Schau auf das Datenblatt der LED-Panels —
+      seriöse Hersteller geben den Wert klar an.
+    </p>
+
+    <h3>Anordnung der Panels</h3>
+    <p>
+      Verteil die LED-Panels rasterförmig an der Decke, mit etwa 1 m
+      Wandabstand und 1,5–2 m zwischen den Panels. So bekommst du
+      gleichmäßige Ausleuchtung ohne dunkle Ecken. Direkt über der
+      Werkbank ergänze eine Schwenkarmleuchte oder LED-Spot, der das
+      Werkstück fokussiert anstrahlt — Allgemeinbeleuchtung plus
+      Arbeitsplatzleuchte ist die Faustregel jeder ergonomischen
+      Beleuchtungsplanung.
+    </p>
+
+    <h3>Stromkosten realistisch</h3>
+    <p>
+      Der Rechner geht von 4 Stunden Werkstatt-Nutzung täglich aus und
+      einem Strompreis von 0,30–0,40 €/kWh (Stand 2026). Wer seltener
+      reingeht, hat entsprechend niedrigere Kosten. Moderne LED-Panels
+      mit 40 W Leistung halten 30.000–50.000 Stunden — das sind bei
+      4 h täglich rund 20–35 Jahre Lebensdauer. Eine
+      Einmalinvestition, die sich nicht durch Tausch kontinuierlich
+      verteuert.
+    </p>
+
+    <p>
+      <strong>Tipp:</strong> Für seltene, sehr feine Arbeiten lohnt es
+      sich nicht, die ganze Werkstatt mit CRI-90-Panels auszustatten.
+      Stattdessen: Allgemeinbeleuchtung mit CRI 80 (günstig) und an der
+      Werkbank eine zusätzliche Spot-Lampe mit CRI 95+. Das ist die
+      preisbewusste Lösung für jemanden, der sowohl Standard- als auch
+      Feinarbeiten macht.
+    </p>
+
+    <aside class="localboost-box" aria-label="Hinweis für Handwerksbetriebe">
+      <span class="localboost-box-label">Für Handwerker</span>
+      <h3>Du bist Elektriker mit eigenem Betrieb?</h3>
+      <p>
+        Wenn du als Elektriker Beleuchtungs-Installationen anbietest, aber
+        zu wenige Anfragen aus deiner Region bekommst:
+        <strong>LocalBoost</strong> macht deinen Betrieb online sichtbar — Bewertungssystem,
+        Google-Optimierung und automatische Kundenakquise.
+      </p>
+      <a class="localboost-box-cta" href="/fuer-handwerker/">Sichtbarkeits-Analyse anfordern</a>
+    </aside>
+
+    <aside class="related-links">
+      <h3>Weiter im Thema</h3>
+      <ul>
+        <li><a href="/pillar/werkstatt-planen-von-null/">Werkstatt selbst planen — die komplette Anleitung</a></li>
+        <li><a href="/pillar/werkstatt-einrichten-bestand/">Bestand zur Werkstatt umbauen</a></li>
+        <li><a href="/ratgeber/cee-steckdose-werkstatt-installation/">CEE-Steckdose in der Werkstatt</a></li>
+        <li><a href="/tools/strombedarfs-rechner/">Strombedarfs-Rechner</a></li>
+        <li><a href="/tools/werkbank-konfigurator/">Werkbank-Konfigurator</a></li>
+      </ul>
+    </aside>
+  </article>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="nav-logo">
+            <div class="nav-logo-icon"><img src="/img/logo-icon.jpg" alt=""></div>
+            <div class="nav-logo-text">
+              <strong>werkstatt-im-eigenheim</strong>
+              <span>Tools · Maße · Konfiguratoren</span>
+            </div>
+          </a>
+          <p>Vom ersten Grundriss bis zur fertigen Werkbank — Tools, Maße und Konfiguratoren für die Werkstatt im Eigenheim.</p>
+          <div class="footer-handwerker-cta">
+            <strong>Du bist Handwerker?</strong>
+            <a href="/fuer-handwerker/">Mehr Aufträge in deiner Region →</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Anleitungen</h4>
+          <ul>
+            <li><a href="/pillar/werkstatt-planen-von-null/">Von Grund auf planen</a></li>
+            <li><a href="/pillar/werkstatt-einrichten-bestand/">Bestand umbauen</a></li>
+            <li><a href="/ratgeber/">Ratgeber</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Tools</h4>
+          <ul>
+            <li><a href="/tools/strombedarfs-rechner/">Strombedarf</a></li>
+            <li><a href="/tools/werkbank-konfigurator/">Werkbank</a></li>
+            <li><a href="/tools/werkstattbeleuchtung-rechner/">Beleuchtung</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Mehr</h4>
+          <ul>
+            <li><a href="/fuer-handwerker/">Für Handwerker</a></li>
+            <li><a href="/impressum.html">Impressum</a></li>
+            <li><a href="/datenschutz.html">Datenschutz</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span data-year>2026</span> werkstatt-im-eigenheim.de — Alle Rechte vorbehalten.</span>
+        <div class="footer-bottom-links">
+          <a href="/impressum.html">Impressum</a>
+          <a href="/datenschutz.html">Datenschutz</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal" data-pdf-modal>
+    <div class="modal-inner" role="dialog" aria-labelledby="pdf-title">
+      <div class="modal-icon">📋</div>
+      <h3 id="pdf-title">PDF mit Beleuchtungsplan</h3>
+      <p>Wir schicken dir die komplette Auswertung als PDF — Lumen, Anzahl
+        Panels, Farbtemperatur und Stromkosten. Kein Newsletter.</p>
+      <form action="#" method="post" data-pdf-capture data-success-message="Check deine Mails. Das PDF ist unterwegs.">
+        <div class="lead-form-row">
+          <div class="lead-form-field">
+            <label for="pdf-email">E-Mail</label>
+            <input id="pdf-email" name="email" type="email" required autocomplete="email">
+          </div>
+        </div>
+        <button type="submit" class="btn btn-orange btn-block lead-form-submit">PDF zuschicken</button>
+        <p class="lead-form-legal">
+          <!-- TODO: GHL/Make.com Webhook -->
+          Wir nutzen deine E-Mail nur, um dir das PDF zu schicken. Details in der
+          <a href="/datenschutz.html">Datenschutzerklärung</a>.
+        </p>
+      </form>
+      <button type="button" class="btn btn-anthracite" style="width:100%;margin-top:8px" data-modal-close>Abbrechen</button>
+    </div>
+  </div>
+
+  <div class="modal" data-thankyou-modal>
+    <div class="modal-inner" role="dialog" aria-labelledby="thanks-title">
+      <div class="modal-icon">✓</div>
+      <h3 id="thanks-title">Danke!</h3>
+      <p data-modal-body>Check deine Mails. Das PDF ist unterwegs.</p>
+      <button type="button" class="btn btn-anthracite" data-modal-close>Schließen</button>
+    </div>
+  </div>
+
+  <script src="/tools.js" defer></script>
+</body>
+</html>

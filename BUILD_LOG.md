@@ -151,3 +151,53 @@ Final-CTA mit BG-Image, 4-Spalten-Footer).
 
 - Spokes (`/ratgeber/...`) und Tool-Seiten existieren noch nicht — alle Querverweise führen aktuell zu 404. Phase 3 + 4.
 - Lead-Funnel `/fuer-handwerker/` existiert noch nicht — LocalBoost-Box-Klicks führen auf 404. Phase 5.
+
+---
+
+## 2026-04-27 — Phase 3 — 3 Tool-Seiten mit echter Berechnung
+
+### Geliefert
+
+- `tools/strombedarfs-rechner/index.html` — 11 Werkstatt-Geräte als Checkbox-Liste mit Stückzahl. Live-Berechnung von Last (W), Strom bei 230 V/400 V, Anzahl Stromkreise, Drehstrom-Empfehlung, Kabelquerschnitt-Faustregel, Anschluss-Größe (16/32/63 A CEE oder Hausnetz), FI-Empfehlung. YMYL-Hinweis als Warning-Card.
+- `tools/werkbank-konfigurator/index.html` — Radio-Pill-Selector für Länge (1,5–3,0 m), Plattenstärke (40/50/60 mm), Material (Buche-Multiplex / Eiche / Industrie), Schubladen (0/3/6), Schraubstock-Position, Höhe (85/90/95 cm). Live-Output: Materialliste, Kosten-Spannweite, Bauzeit, Werkzeugliste. Kosten-Daten Stand 2026 als Min/Max-Spannweiten je Material und Stärke.
+- `tools/werkstattbeleuchtung-rechner/index.html` — Range-Slider 10–80 m², Tätigkeit (Grob/Allgemein/Feinarbeit/Lackierung) und Deckenhöhe (2,4/2,6/3,0/höher). Live-Output: Lumen-Bedarf, Anzahl LED-Panels, Farbtemperatur, CRI-Wert, jährliche kWh und Stromkosten-Spannweite (0,30–0,40 €/kWh).
+- Alle drei Tool-Seiten: ~800 Wörter Kontext-Text + Tool + ~600 Wörter Erklärung dahinter (was bedeuten die Werte, Praxis-Tipps), LocalBoost-Box, Querverweise auf Pillar 1 + 2 verwandte Spokes + andere Tools.
+- `tools.js` komplett neu mit allen 3 Tool-Berechnungen, Live-Update auf jedes Input-Event, Helper für Checkbox-Rows + Radio-Pills, PDF-Capture-Trigger mit Modal-Form.
+- CSS-Erweiterungen: `.tool-shell`, `.tool-section`, `.geraete-list`/`.geraete-row`, `.radio-pill-group`/`.radio-pill`, `.tool-slider`, `.tool-results` (dunkles Result-Panel mit Anthrazit-BG), `.tool-result-card`/`.tool-result-list`/`.tool-result-recommendation`/`.tool-result-warning`.
+- PDF-Capture-Modal pro Tool: separates Modal mit Email-Form, JS-Handler zeigt Danke-Modal nach Submit.
+- Sitemap erweitert (3 Tool-URLs mit Priority 0.85).
+
+### Berechnungslogik
+
+**Tool 1 — Strom:**
+- `summeW = Σ (geräteWatt × stückzahl)`
+- `stromA_230 = summeW / 230`
+- `stromA_400 = summeW / (400 × √3)`
+- `stromkreise = ceil(summeW / (16 × 230))` = ceil(summeW / 3680)
+- `drehstrom = (summeW > 7000) || (maxEinzelW > 3500)`
+- `kabel`: ≤ 16 A → 2,5 mm² · ≤ 32 A → 4 mm² · ≤ 50 A → 6 mm² · sonst 10 mm²
+
+**Tool 2 — Werkbank:**
+- Plattenfläche = Länge × 0,7 m
+- Kosten-Min/Max: Plattenfläche × Material/Stärke-Range + Untergestell (80–120 €) + Schrauben (25–45 €) + Schubladenführungen (18–35 € pro Stück) + Schraubstock (80–250 € optional)
+- Bauzeit: 4 h Grundgestell + 2 h Plattenmontage + 1,5 h pro Schublade + 1 h Schraubstock
+- Vierkantholz-Bedarf: 4 Beine × Höhe + 4 Längsstreben × Länge + 4 Querstreben × Tiefe (0,7 m)
+
+**Tool 3 — Beleuchtung:**
+- Lux je Tätigkeit: Grob 200, Allgemein 300, Fein 500, Lackierung 750
+- Höhen-Faktor: 2,4 m → 1,0 · 2,6 m → 1,15 · 3,0 m → 1,3 · höher → 1,5
+- `lumen = m² × lux × faktor`
+- `panels = ceil(lumen / 5000)` (5.000 lm pro 60 × 60 cm Panel)
+- `jahresKwh = panels × 40 W × 4 h × 365 / 1000`
+- `kosten = jahresKwh × 0,30…0,40 €/kWh`
+- Farbtemperatur: 4000 K Standard, 5000 K Fein/Lackierung
+- CRI: ≥ 80 Standard, ≥ 90 Lackierung
+
+### Annahmen / Entscheidungen
+
+- **Live-Update statt Submit-Button:** alle Tools berechnen direkt bei jedem Change-Event neu — kein „Berechnen"-Button. Direkter, schneller, mobilfreundlicher.
+- **Radio-Pills statt Selects** für Tool 2/3 — visuell stärker, einfacher mit Touch zu bedienen.
+- **PDF-Generierung selbst** ist Phase 5+ — aktuell zeigt der PDF-Button nur das Email-Capture-Modal, JS-Submit zeigt Danke-Modal.
+- **YMYL:** Tool 1 hat exakt 1 × den Hinweis „Endinstallation durch Elektriker" als Warning-Card im Result-Panel. Tool 2 + 3 brauchen keinen YMYL-Hinweis.
+- **Kosten-Disziplin:** Alle Material-/Strompreise als Spannweiten („0,30–0,40 €/kWh", „2.500–4.000 €"), Stand 2026 explizit erwähnt.
+- **Kein Backend:** alles client-seitig in Vanilla-JS, keine Build-Schritte. Tool-Logik unter ~200 Zeilen pro Tool.

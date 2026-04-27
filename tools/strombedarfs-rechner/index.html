@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Strombedarfs-Rechner für die Werkstatt — werkstatt-im-eigenheim.de</title>
+  <meta name="description" content="Werkstatt-Strombedarf in 2 Minuten durchgerechnet. Last in W/A, Drehstrom-Empfehlung, Anzahl Stromkreise und Kabelquerschnitt — die Vorlage für deinen Elektriker.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://werkstatt-im-eigenheim.de/tools/strombedarfs-rechner/">
+  <meta property="og:title" content="Strombedarfs-Rechner für die Werkstatt">
+  <meta property="og:description" content="Last, Drehstrom-Empfehlung und Stromkreise in 2 Minuten.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://werkstatt-im-eigenheim.de/tools/strombedarfs-rechner/">
+  <meta property="og:image" content="https://werkstatt-im-eigenheim.de/img/icon-strom.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-bar-left">
+        <div class="top-bar-item">Werkstatt planen, einrichten und ordentlich ausstatten — von der Skizze bis zur Steckdose.</div>
+      </div>
+      <div class="top-bar-right">
+        <span>Du bist selbst Handwerker?</span>
+        <a href="/fuer-handwerker/" class="accent">Mehr Aufträge in deiner Region →</a>
+      </div>
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="/" class="nav-logo">
+        <div class="nav-logo-icon"><img src="/img/logo-icon.jpg" alt=""></div>
+        <div class="nav-logo-text">
+          <strong>werkstatt-im-eigenheim</strong>
+          <span>Tools · Maße · Konfiguratoren</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/pillar/werkstatt-planen-von-null/">Werkstatt planen</a></li>
+        <li><a href="/pillar/werkstatt-einrichten-bestand/">Werkstatt einrichten</a></li>
+        <li><a href="/#tools" class="is-active">Tools</a></li>
+        <li><a href="/ratgeber/">Ratgeber</a></li>
+      </ul>
+      <button class="hamburger" data-nav-toggle aria-label="Menü öffnen" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" data-mobile-menu>
+    <a href="/pillar/werkstatt-planen-von-null/">Werkstatt planen</a>
+    <a href="/pillar/werkstatt-einrichten-bestand/">Werkstatt einrichten</a>
+    <a href="/#tools">Tools</a>
+    <a href="/ratgeber/">Ratgeber</a>
+    <a href="/fuer-handwerker/">Für Handwerker</a>
+  </div>
+
+  <section class="article-hero">
+    <div class="container">
+      <span class="article-eyebrow">Werkstatt-Tool · Strom</span>
+      <h1>Strombedarfs-Rechner für deine Werkstatt</h1>
+      <p class="article-lead">
+        Hak ab, was bei dir reinkommt — du siehst sofort, wie viel Last du
+        gleichzeitig hast, ob Drehstrom rein muss, wie viele Stromkreise
+        du brauchst und welcher Kabelquerschnitt passt.
+      </p>
+      <div class="article-meta">
+        <span>~2 Min</span><span class="dot">·</span>
+        <span>11 typische Werkstatt-Geräte</span><span class="dot">·</span>
+        <span>Faustwerte als Elektriker-Vorlage</span>
+      </div>
+    </div>
+  </section>
+
+  <article class="article-content">
+    <p>
+      Strom ist die Wahl, die du am wenigsten nachträglich ändern kannst.
+      Wer beim Werkstatt-Aufbau zu wenig Stromkreise oder den falschen
+      Anschluss legt, stemmt sich später nochmal Schlitze in die Wand —
+      eine Erfahrung, die niemand zweimal machen will. Bevor du den
+      Elektriker bestellst oder selbst Leerrohre verlegst, lohnt sich die
+      Frage: <em>Wieviel Strom brauche ich überhaupt?</em>
+    </p>
+    <p>
+      Der Rechner unten geht durch die typischen Werkstatt-Geräte und
+      summiert die maximale gleichzeitige Last. Daraus leiten wir ab, ob
+      Drehstrom (400 V) sinnvoll ist, wie viele 16-A-Stromkreise du
+      einplanen solltest und welcher Kabelquerschnitt für die Hauptzuleitung
+      passt. Die Werte sind eine ehrliche Vorbemessung — die Endbemessung
+      und Installation macht der Elektriker, du gehst aber mit klarer
+      Vorstellung in das Gespräch.
+    </p>
+
+    <div class="tool-shell" data-tool="strombedarf">
+      <h2>Was kommt bei dir rein?</h2>
+      <p class="tool-shell-intro">Setz das Häkchen bei deinen Geräten und wenn du was mehrfach hast, trag die Stückzahl ein.</p>
+
+      <div class="tool-section">
+        <div class="tool-section-title">Holzbearbeitung</div>
+        <div class="geraete-list">
+          <label class="geraete-row">
+            <input type="checkbox" data-watt="2200" data-name="Tischkreissäge">
+            <span class="geraete-row-name">Tischkreissäge</span>
+            <span class="geraete-row-watt">≈ 2.200 W</span>
+            <input type="number" class="geraete-row-qty" min="1" max="9" value="1" aria-label="Stückzahl">
+          </label>
+          <label class="geraete-row">
+            <input type="checkbox" data-watt="2000" data-name="Hobel/Abrichte">
+            <span class="geraete-row-name">Hobel / Abrichte</span>
+            <span class="geraete-row-watt">≈ 2.000 W</span>
+            <input type="number" class="geraete-row-qty" min="1" max="9" value="1" aria-label="Stückzahl">
+          </label>
+          <label class="geraete-row">
+            <input type="checkbox" data-watt="2500" data-name="Drehbank">
+            <span class="geraete-row-name">Drehbank</span>
+            <span class="geraete-row-watt">≈ 2.500 W</span>
+            <input type="number" class="geraete-row-qty" min="1" max="9" value="1" aria-label="Stückzahl">
+          </label>
+          <label class="geraete-row">
+            <input type="checkbox" data-watt="1500" data-name="Absauganlage">
+            <span class="geraete-row-name">Absauganlage</span>
+            <span class="geraete-row-watt">≈ 1.500 W</span>
+            <input type="number" class="geraete-row-qty" min="1" max="9" value="1" aria-label="Stückzahl">
+          </label>
+        </div>
+      </div>
+
+      <div class="tool-section">
+        <div class="tool-section-title">Schweißen &amp; Druckluft</div>
+        <div class="geraete-list">
+          <label class="geraete-row">
+            <input type="checkbox" data-watt="5000" data-name="Schweißgerät MIG/MAG">
+            <span class="geraete-row-name">Schweißgerät MIG/MAG</span>
+            <span class="geraete-row-watt">≈ 5.000 W</span>
+            <input type="number" class="geraete-row-qty" min="1" max="9" value="1" aria-label="Stückzahl">
+          </label>
+          <label class="geraete-row">
+            <input type="checkbox" data-watt="3500" data-name="Schweißgerät Inverter">
+            <span class="geraete-row-name">Schweißgerät Inverter</span>
+            <span class="geraete-row-watt">≈ 3.500 W</span>
+            <input type="number" class="geraete-row-qty" min="1" max="9" value="1" aria-label="Stückzahl">
+          </label>
+          <label class="geraete-row">
+            <input type="checkbox" data-watt="1500" data-name="Kompressor klein">
+            <span class="geraete-row-name">Kompressor klein (bis 50 l)</span>
+            <span class="geraete-row-watt">≈ 1.500 W</span>
+            <input type="number" class="geraete-row-qty" min="1" max="9" value="1" aria-label="Stückzahl">
+          </label>
+          <label class="geraete-row">
+            <input type="checkbox" data-watt="3000" data-name="Kompressor groß">
+            <span class="geraete-row-name">Kompressor groß (ab 100 l)</span>
+            <span class="geraete-row-watt">≈ 3.000 W</span>
+            <input type="number" class="geraete-row-qty" min="1" max="9" value="1" aria-label="Stückzahl">
+          </label>
+        </div>
+      </div>
+
+      <div class="tool-section">
+        <div class="tool-section-title">Klima &amp; Allgemein</div>
+        <div class="geraete-list">
+          <label class="geraete-row">
+            <input type="checkbox" data-watt="2000" data-name="Heizlüfter">
+            <span class="geraete-row-name">Heizlüfter</span>
+            <span class="geraete-row-watt">≈ 2.000 W</span>
+            <input type="number" class="geraete-row-qty" min="1" max="9" value="1" aria-label="Stückzahl">
+          </label>
+          <label class="geraete-row">
+            <input type="checkbox" data-watt="500" data-name="Beleuchtung gesamt" checked>
+            <span class="geraete-row-name">Beleuchtung gesamt</span>
+            <span class="geraete-row-watt">≈ 500 W</span>
+            <input type="number" class="geraete-row-qty" min="1" max="9" value="1" aria-label="Stückzahl">
+          </label>
+          <label class="geraete-row">
+            <input type="checkbox" data-watt="1000" data-name="Sonstige Steckdosen-Reserve" checked>
+            <span class="geraete-row-name">Sonstige Steckdosen-Reserve</span>
+            <span class="geraete-row-watt">≈ 1.000 W</span>
+            <input type="number" class="geraete-row-qty" min="1" max="9" value="1" aria-label="Stückzahl">
+          </label>
+        </div>
+      </div>
+
+      <div class="tool-results" data-tool-results aria-live="polite"></div>
+
+      <div class="tool-pdf-row">
+        <button type="button" class="btn btn-orange" data-pdf-trigger>
+          PDF mit Ergebnissen für den Elektriker
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        </button>
+        <p>Wir schicken dir die Zusammenfassung als PDF — kein Newsletter.</p>
+      </div>
+    </div>
+
+    <h2>Was die Werte bedeuten</h2>
+    <p>
+      Die wichtigste Zahl ist die <strong>maximale gleichzeitige Last</strong>.
+      Die geht davon aus, dass alle ausgewählten Geräte zur selben Zeit
+      laufen — das ist der Worst Case und der Wert, an dem der Elektriker
+      die Anschlussgröße bemisst. Wer realistisch nur eine große Maschine
+      gleichzeitig betreibt, kann mit kleineren Anschlüssen leben — wer
+      öfter Tischkreissäge plus Absauganlage gleichzeitig fährt, braucht
+      die größere Reserve.
+    </p>
+
+    <h3>Anzahl Stromkreise</h3>
+    <p>
+      Pro 16-A-Sicherung kannst du grob 3.500 W Dauerlast fahren. Der
+      Rechner teilt die Gesamtlast durch diesen Wert und zeigt dir, auf wie
+      viele Kreise du das verteilen solltest. In der Praxis: lieber einen
+      Kreis mehr planen als zu wenig. Beleuchtung gehört auf einen eigenen
+      Kreis — wenn dir bei einem Kurzschluss die Säge ausgeht, willst du
+      nicht im Dunkeln stehen.
+    </p>
+
+    <h3>Drehstrom-Empfehlung</h3>
+    <p>
+      Drehstrom (400 V, dreiphasig) wird sinnvoll, sobald entweder die
+      Gesamtlast über 7.000 W steigt oder ein einzelnes Gerät über 3.500 W
+      zieht. Beides trifft typischerweise bei Tischkreissäge mit
+      Absauganlage, Hobel/Abrichte oder Schweißgeräten MIG/MAG zu.
+      Drehstrom-Geräte laufen ruhiger, haben weniger Verluste und triggern
+      keine Sicherungen beim Anlauf.
+    </p>
+
+    <h3>Kabelquerschnitt</h3>
+    <p>
+      Die Faustregel im Rechner ist eine Vorabbemessung: bis 16 A reicht
+      2,5 mm² Kupfer für die Hauptzuleitung, bis 32 A nimmst du 4 mm²,
+      darüber 6–10 mm². Die exakte Endbemessung hängt von Verlegeart,
+      Häufung in Leerrohr und Kabellänge ab — das macht der Elektriker. Du
+      kannst aber Leerrohre vorausschauend in der passenden Größe verlegen.
+    </p>
+
+    <h3>FI-Schutzschalter</h3>
+    <p>
+      Standard für Werkstätten: 30 mA RCD (FI-Schutzschalter). In jedem
+      Stromkreis mit Steckdosen Pflicht, in Beleuchtungs-Kreisen empfohlen.
+      Bei selbst geplanter Anlage: jede Maschinen-Steckdose hinter einem
+      eigenen FI absichern, dann fliegt bei einem Kurzschluss nicht die
+      ganze Werkstatt raus.
+    </p>
+
+    <p>
+      <strong>Wichtig zum Schluss:</strong> Diese Werte sind Faustregeln und
+      ersetzen die Endbemessung durch den Elektriker nicht. Alle Eingriffe
+      am Hausnetz (neue Stromkreise, CEE-Steckdosen, Sicherungskasten)
+      gehören in Fachhand. Du planst, legst Leerrohre und Schlitze vor —
+      der Elektriker schließt an, prüft und bescheinigt.
+    </p>
+
+    <aside class="localboost-box" aria-label="Hinweis für Handwerksbetriebe">
+      <span class="localboost-box-label">Für Handwerker</span>
+      <h3>Du bist Elektriker mit eigenem Betrieb?</h3>
+      <p>
+        Wenn deine Region voll mit Elektro-Anfragen ist, aber du davon zu wenig
+        abbekommst, liegt's selten am Können — sondern an der Online-Sichtbarkeit.
+        <strong>LocalBoost</strong> macht deinen Betrieb in deiner Region online sichtbar
+        — Bewertungssystem, Google-Optimierung und automatische Anfragen.
+      </p>
+      <a class="localboost-box-cta" href="/fuer-handwerker/">Sichtbarkeits-Analyse anfordern</a>
+    </aside>
+
+    <aside class="related-links">
+      <h3>Weiter im Thema</h3>
+      <ul>
+        <li><a href="/pillar/werkstatt-planen-von-null/">Werkstatt selbst planen — die komplette Anleitung</a></li>
+        <li><a href="/ratgeber/cee-steckdose-werkstatt-installation/">CEE-Steckdose: 16, 32 oder 63 A?</a></li>
+        <li><a href="/ratgeber/druckluft-werkstatt-grundlagen/">Druckluft in der Werkstatt — Kompressor-Größen</a></li>
+        <li><a href="/tools/werkbank-konfigurator/">Werkbank-Konfigurator</a></li>
+        <li><a href="/tools/werkstattbeleuchtung-rechner/">Beleuchtungs-Rechner</a></li>
+      </ul>
+    </aside>
+  </article>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="nav-logo">
+            <div class="nav-logo-icon"><img src="/img/logo-icon.jpg" alt=""></div>
+            <div class="nav-logo-text">
+              <strong>werkstatt-im-eigenheim</strong>
+              <span>Tools · Maße · Konfiguratoren</span>
+            </div>
+          </a>
+          <p>Vom ersten Grundriss bis zur fertigen Werkbank — Tools, Maße und Konfiguratoren für die Werkstatt im Eigenheim.</p>
+          <div class="footer-handwerker-cta">
+            <strong>Du bist Handwerker?</strong>
+            <a href="/fuer-handwerker/">Mehr Aufträge in deiner Region →</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Anleitungen</h4>
+          <ul>
+            <li><a href="/pillar/werkstatt-planen-von-null/">Von Grund auf planen</a></li>
+            <li><a href="/pillar/werkstatt-einrichten-bestand/">Bestand umbauen</a></li>
+            <li><a href="/ratgeber/">Ratgeber</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Tools</h4>
+          <ul>
+            <li><a href="/tools/strombedarfs-rechner/">Strombedarf</a></li>
+            <li><a href="/tools/werkbank-konfigurator/">Werkbank</a></li>
+            <li><a href="/tools/werkstattbeleuchtung-rechner/">Beleuchtung</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Mehr</h4>
+          <ul>
+            <li><a href="/fuer-handwerker/">Für Handwerker</a></li>
+            <li><a href="/impressum.html">Impressum</a></li>
+            <li><a href="/datenschutz.html">Datenschutz</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span data-year>2026</span> werkstatt-im-eigenheim.de — Alle Rechte vorbehalten.</span>
+        <div class="footer-bottom-links">
+          <a href="/impressum.html">Impressum</a>
+          <a href="/datenschutz.html">Datenschutz</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- PDF-Capture Modal -->
+  <div class="modal" data-pdf-modal>
+    <div class="modal-inner" role="dialog" aria-labelledby="pdf-title">
+      <div class="modal-icon">📋</div>
+      <h3 id="pdf-title">PDF mit deinen Ergebnissen</h3>
+      <p>Wir schicken dir die Strombedarfs-Auswertung als PDF — die Vorlage,
+        die du dem Elektriker hinlegst. Kein Newsletter, keine Cookies.</p>
+      <form action="#" method="post" data-pdf-capture data-success-message="Check deine Mails. Das PDF ist unterwegs.">
+        <div class="lead-form-row">
+          <div class="lead-form-field">
+            <label for="pdf-email">E-Mail</label>
+            <input id="pdf-email" name="email" type="email" required autocomplete="email">
+          </div>
+        </div>
+        <button type="submit" class="btn btn-orange btn-block lead-form-submit">PDF zuschicken</button>
+        <p class="lead-form-legal">
+          <!-- TODO: GHL/Make.com Webhook -->
+          Wir nutzen deine E-Mail nur, um dir das PDF zu schicken. Details in der
+          <a href="/datenschutz.html">Datenschutzerklärung</a>.
+        </p>
+      </form>
+      <button type="button" class="btn btn-anthracite" style="width:100%;margin-top:8px" data-modal-close>Abbrechen</button>
+    </div>
+  </div>
+
+  <div class="modal" data-thankyou-modal>
+    <div class="modal-inner" role="dialog" aria-labelledby="thanks-title">
+      <div class="modal-icon">✓</div>
+      <h3 id="thanks-title">Danke!</h3>
+      <p data-modal-body>Check deine Mails. Das PDF ist unterwegs.</p>
+      <button type="button" class="btn btn-anthracite" data-modal-close>Schließen</button>
+    </div>
+  </div>
+
+  <script src="/tools.js" defer></script>
+</body>
+</html>
