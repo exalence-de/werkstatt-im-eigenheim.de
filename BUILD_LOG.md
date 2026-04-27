@@ -201,3 +201,54 @@ Final-CTA mit BG-Image, 4-Spalten-Footer).
 - **YMYL:** Tool 1 hat exakt 1 × den Hinweis „Endinstallation durch Elektriker" als Warning-Card im Result-Panel. Tool 2 + 3 brauchen keinen YMYL-Hinweis.
 - **Kosten-Disziplin:** Alle Material-/Strompreise als Spannweiten („0,30–0,40 €/kWh", „2.500–4.000 €"), Stand 2026 explizit erwähnt.
 - **Kein Backend:** alles client-seitig in Vanilla-JS, keine Build-Schritte. Tool-Logik unter ~200 Zeilen pro Tool.
+
+---
+
+## 2026-04-27 — Phase 4 — Ratgeber-Hub + 8 Spoke-Artikel
+
+### Geliefert
+
+- 6 neue Hero-Bilder via Nano Banana generiert (1K, 16:9, dark cinematic mit oranger Akzente):
+  - `spoke-bodenbeschichtung.jpg`, `spoke-druckluft.jpg`, `spoke-heizung.jpg`, `spoke-werkzeugwand.jpg`, `spoke-absauganlage.jpg`, `spoke-belueftung.jpg`
+- `ratgeber/index.html` — Ratgeber-Hub mit 3 thematisch sortierten Sektionen (Konstruktion, Technik, Klima), je 3 Karten mit Bild + Beschreibung
+- 8 Spoke-Artikel (jeweils ~1.000–1.300 Wörter):
+  1. `werkbank-hoehe-richtige-arbeitshoehe` — Faustformel, Tabelle Körpergröße × Höhe (1,55–2,00 m), höhenverstellbare Untergestelle
+  2. `werkstatt-bodenbeschichtung-vergleich` — Epoxid, 2K-PU, Hartstoffestrich, Vinyl mit Vergleichstabelle und Untergrund-Vorbereitung
+  3. `druckluft-werkstatt-grundlagen` — Kompressor-Dimensionierung, Luftbedarf-Tabelle, Stich- vs. Ringleitung, Wasserabscheider
+  4. `werkstattheizung-optionen` — Infrarot, Heizgebläse, Pelletofen, Wärmepumpe mit Anschaffungs-/Betriebskosten-Tabelle, W/m²-Faustregel
+  5. `werkzeugwand-system-aufbauen` — French Cleat vs. Lochwand vs. Schienensystem, plus Schritt-für-Schritt-Eigenbau-Anleitung
+  6. `absauganlage-werkstatt-planen` — Einzelgerät vs. Zentralabsaugung, Saugleistungs-Tabelle je Maschine, Rohrdurchmesser, Filter-Klassen
+  7. `werkstatt-belueftung-fenster-loesungen` — Querlüftung, mechanische Lüftung, Wärmerückgewinnung, Spezialfall Keller (Sommer-Falle, Feuchte-Quellen)
+  8. `cee-steckdose-werkstatt-installation` — 16/32/63 A Vergleich, Vorbereitungs-Checkliste für den Elektriker
+- Alle Spokes mit:
+  - Hero-Bild + Eyebrow + H1 + Lead + Meta
+  - 4–6 H2-Sektionen, mindestens 1 Tabelle oder Liste
+  - LocalBoost-Box nach ~60 % (zugeschnitten auf das jeweilige Handwerk: Tischler, Heizungsbauer, Elektriker, Maler/Bodenleger, Lüftungstechniker)
+  - FAQ-Block mit 4 Fragen + Schema.org FAQPage
+  - Article-Schema mit datePublished/Modified, Author, Publisher
+  - Querverweise: 1 Pillar + 1 Tool + 2 verwandte Spokes
+- Sitemap erweitert auf 17 URLs
+
+### Inhalts-Disziplin
+
+- **Audience-Sprache:** „bombenfest", „Druckst's aus", „Reue-Moment", „die Vorlage für den Elektriker"
+- **Konkrete Zahlen:** alle Preise als Spannweiten („30–60 €/m²", „800–2.500 €"), Stand 2026 explizit
+- **Keine erfundenen DIN-Normen** — Lux-Werte als „anerkannte Empfehlungen" formuliert ohne Zitierfehler
+- **YMYL:** Spoke 8 (CEE-Steckdose) hat den Elektriker-Hinweis als eigenen Abschnitt; Spoke 4 (Heizung) erwähnt Kältemittel-Schein für Wärmepumpen-Montage. Sonst keine YMYL-Themen.
+
+### Verlinkungs-Matrix (Phase 4)
+
+| Spoke | Pillar | Tool | Verwandte Spokes |
+|---|---|---|---|
+| Werkbank-Höhe | 1 | 2 | Werkzeugwand, Boden |
+| Bodenbeschichtung | 2 | 1 | Heizung, Belüftung |
+| Druckluft | 1 | 1 | CEE, Absauganlage |
+| Werkstattheizung | 1+2 | – | Belüftung, Boden |
+| Werkzeugwand | 1 | 2 | Werkbank-Höhe, Boden |
+| Absauganlage | 1 | 1 | Druckluft, Belüftung |
+| Belüftung | 2 | – | Heizung, Boden, Absauganlage |
+| CEE-Steckdose | 1 | 1 | Druckluft, Absauganlage |
+
+### Offene Punkte
+
+- Lead-Funnel `/fuer-handwerker/` fehlt noch — alle LocalBoost-Klicks aus Spokes gehen aktuell ins 404. Phase 5.
