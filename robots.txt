@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://werkstatt-im-eigenheim.de/sitemap.xml

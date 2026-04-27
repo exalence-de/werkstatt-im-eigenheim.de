@@ -4,3 +4,9 @@ node_modules/
 dist/
 .vscode/
 .idea/
+
+# Nano-Banana-Output (Arbeitsordner). Produktive Bilder landen in /img/.
+generated_imgs/
+
+# Design-Vorlagen vom User — nur lokale Referenz, nicht auf Repo.
+vorlagen/
