@@ -292,8 +292,32 @@ img{max-width:100%;display:block}
 .lead-form-legal{margin-top:14px;font-size:.74rem;color:var(--gray-500);line-height:1.55}
 .lead-form-legal a{color:var(--gray-600);text-decoration:underline}
 
+/* ===== ARTICLE-HERO (Pillars / Spokes) ===== */
+.article-hero{padding:36px 0 14px;background:#fff}
+.article-hero .container{max-width:880px}
+.article-hero-img{width:100%;aspect-ratio:21/9;object-fit:cover;border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);margin-bottom:32px;background:var(--anthracite-deep)}
+.article-eyebrow{display:inline-block;font-size:.72rem;font-weight:700;color:var(--orange-dark);text-transform:uppercase;letter-spacing:1.6px;margin-bottom:14px}
+.article-hero h1{font-size:2.5rem;font-weight:800;color:var(--anthracite);line-height:1.12;margin-bottom:18px;letter-spacing:-.5px}
+.article-lead{font-size:1.15rem;color:var(--gray-600);line-height:1.65;margin-bottom:20px;font-weight:500;max-width:660px}
+.article-meta{display:flex;gap:8px;flex-wrap:wrap;font-size:.85rem;color:var(--gray-500);align-items:center}
+.article-meta span{display:inline-flex;align-items:center;gap:6px}
+.article-meta .dot{color:var(--gray-300)}
+@media(max-width:680px){
+  .article-hero h1{font-size:1.85rem}
+  .article-hero-img{aspect-ratio:16/9}
+  .article-lead{font-size:1.02rem}
+}
+
+/* ===== GRUNDRISS-CARDS (in Pillar 1) ===== */
+.grundriss-grid{display:grid;gap:18px;margin:24px 0 32px}
+@media(min-width:760px){.grundriss-grid{grid-template-columns:repeat(3,1fr)}}
+.grundriss-card{background:#fff;border:1px solid var(--gray-200);border-radius:var(--radius-lg);padding:18px;box-shadow:var(--shadow-sm)}
+.grundriss-card h4{font-size:1rem;margin:0 0 4px;color:var(--anthracite);font-weight:700;letter-spacing:-.1px}
+.grundriss-card p{font-size:.78rem;color:var(--gray-500);margin:0 0 14px;line-height:1.5}
+.grundriss-card svg{width:100%;height:auto;display:block;border-radius:var(--radius-sm)}
+
 /* ===== ARTICLE-CONTENT (Pillars + Spokes) ===== */
-.article-content{max-width:720px;margin:0 auto;padding:60px 24px}
+.article-content{max-width:720px;margin:0 auto;padding:36px 24px 60px}
 .article-content h1{font-size:2.4rem;font-weight:800;color:var(--anthracite);margin-bottom:20px;line-height:1.15;letter-spacing:-.4px}
 .article-content h2{font-size:1.7rem;font-weight:800;color:var(--anthracite);margin:48px 0 16px;letter-spacing:-.2px;line-height:1.2}
 .article-content h3{font-size:1.25rem;font-weight:700;color:var(--anthracite);margin:32px 0 12px}

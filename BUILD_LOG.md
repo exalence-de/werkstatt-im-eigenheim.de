@@ -103,9 +103,51 @@ Final-CTA mit BG-Image, 4-Spalten-Footer).
 | Slug | Status |
 |---|---|
 | `hero-home.jpg` | ✓ Phase 1.1 |
-| `tool-strom.jpg` | ✓ Phase 1.1 |
-| `tool-werkbank.jpg` | ✓ Phase 1.1 |
-| `tool-licht.jpg` | ✓ Phase 1.1 |
-| `pillar-planen.jpg` | ✓ Phase 1.1 |
+| `tool-strom.jpg` | ✓ Phase 1.1 (Foto, jetzt nur noch in Ratgeber-Cards) |
+| `tool-werkbank.jpg` | ✓ Phase 1.1 (Foto, jetzt Hero Pillar 2 + Ratgeber-Card) |
+| `tool-licht.jpg` | ✓ Phase 1.1 (Foto, reserviert für Ratgeber-Hub) |
+| `pillar-planen.jpg` | ✓ Phase 1.1 (Hero Pillar 1) |
 | `cta-final.jpg` | ✓ Phase 1.1 |
-| Pillar 2 + 8 Spokes + Tool-Detail-Hero | offen, kommen in Phase 2–4 |
+| `logo-icon.jpg` | ✓ Phase 1.2 |
+| `icon-strom.jpg` | ✓ Phase 1.2 (Hero-Quicklink + Tool-Card) |
+| `icon-werkbank.jpg` | ✓ Phase 1.2 |
+| `icon-licht.jpg` | ✓ Phase 1.2 |
+| 8 Spokes + Tool-Detail-Hero | offen, kommen in Phase 3–4 |
+
+---
+
+## 2026-04-27 — Phase 2 — 2 Pillar Pages
+
+### Geliefert
+
+- `pillar/werkstatt-planen-von-null/index.html` (~4.000 Wörter):
+  - 8 H2-Abschnitte: Bedarfsanalyse, Größenplanung, Strom/Heizung/Belüftung, Bodenbeschichtung, Werkbank-Position, Lagerlogik, Beleuchtungsplan, Bauphasen-Reihenfolge
+  - 3 Beispiel-Grundrisse als Inline-SVG (16, 24, 40 m²)
+  - LocalBoost-Box nach ~60 % (zwischen Boden und Werkbank-Position)
+  - FAQ-Block mit 5 Fragen (Schema.org FAQPage)
+  - Article + FAQPage JSON-LD
+  - Querverweise auf alle 3 Tools, 5 Spokes und Pillar 2
+- `pillar/werkstatt-einrichten-bestand/index.html` (~4.200 Wörter):
+  - 5 Hauptabschnitte: Garage, Keller, Schuppen, Vergleichstabelle, Renovierungs-Schritte je Variante
+  - Vergleichstabelle (8 Kriterien × 3 Varianten)
+  - Phasen-Listen (5 für Garage, 7 für Keller, 6 für Schuppen)
+  - LocalBoost-Box nach ~60 %
+  - FAQ-Block mit 5 Fragen
+  - Querverweise auf alle 3 Tools, 4 Spokes und Pillar 1
+- CSS-Erweiterungen in `style.css`:
+  - `.article-hero` mit `.article-hero-img`, `.article-eyebrow`, `.article-lead`, `.article-meta`
+  - `.grundriss-grid` und `.grundriss-card` für SVG-Beispiel-Grundrisse
+  - `.article-content`-Padding leicht angepasst (kein Doppel-Padding mit hero)
+- `sitemap.xml` erweitert (2 Pillar-URLs mit Priority 0.9, monthly)
+
+### Inhalts-Entscheidungen
+
+- **Hero-Bilder:** Pillar 1 = `pillar-planen.jpg` (Top-Down Blueprint, perfekt thematisch). Pillar 2 = `tool-werkbank.jpg` (zugewiesen statt neu generieren — passt zu „einrichten/Werkbank-Aufbau").
+- **YMYL-Hinweise (1 × pro Seite):** Pillar 1: „Endinstallation am Hausnetz macht der Elektriker" als Blockquote im Strom-Abschnitt. Pillar 2: nur 1 × bei CEE-Erwähnung.
+- **Konkrete Zahlen:** alle Material-/Kostenangaben als Spannweiten („250–450 €/m²", „2.500–4.000 €"), explizit „Stand 2026".
+- **Verweisstruktur:** Jede Pillar verlinkt auf alle 3 Tools, 4–7 Spokes (404 bis Phase 4) und das andere Pillar.
+
+### Offene Punkte
+
+- Spokes (`/ratgeber/...`) und Tool-Seiten existieren noch nicht — alle Querverweise führen aktuell zu 404. Phase 3 + 4.
+- Lead-Funnel `/fuer-handwerker/` existiert noch nicht — LocalBoost-Box-Klicks führen auf 404. Phase 5.
