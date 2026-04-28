@@ -267,6 +267,10 @@ img{max-width:100%;display:block}
 .footer-bottom{border-top:1px solid rgba(255,255,255,.06);padding-top:24px;display:flex;align-items:center;justify-content:space-between;font-size:.78rem}
 .footer-bottom-links{display:flex;gap:18px}
 .footer-bottom-links a:hover{color:var(--orange)}
+.footer-partner-link{color:rgba(255,255,255,.65);transition:color .2s;text-decoration:none;font-weight:500}
+.footer-partner-link:hover{color:var(--orange)}
+.footer-partner-link strong{color:rgba(255,255,255,.88);font-weight:700}
+@media(max-width:640px){.footer-bottom>span{line-height:1.7}}
 
 /* ===== MODAL (Danke) ===== */
 .modal{display:none;position:fixed;inset:0;background:rgba(17,24,39,.7);z-index:10000;align-items:center;justify-content:center;padding:20px}
