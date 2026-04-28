@@ -191,14 +191,6 @@
       </div>
 
       <div class="tool-results" data-tool-results aria-live="polite"></div>
-
-      <div class="tool-pdf-row">
-        <button type="button" class="btn btn-orange" data-pdf-trigger>
-          PDF mit Ergebnissen für den Elektriker
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        </button>
-        <p>Wir schicken dir die Zusammenfassung als PDF — kein Newsletter.</p>
-      </div>
     </div>
 
     <h2>Was die Werte bedeuten</h2>
@@ -333,31 +325,6 @@
       </div>
     </div>
   </footer>
-
-  <!-- PDF-Capture Modal -->
-  <div class="modal" data-pdf-modal>
-    <div class="modal-inner" role="dialog" aria-labelledby="pdf-title">
-      <div class="modal-icon">📋</div>
-      <h3 id="pdf-title">PDF mit deinen Ergebnissen</h3>
-      <p>Wir schicken dir die Strombedarfs-Auswertung als PDF — die Vorlage,
-        die du dem Elektriker hinlegst. Kein Newsletter, keine Cookies.</p>
-      <form action="#" method="post" data-pdf-capture data-success-message="Check deine Mails. Das PDF ist unterwegs.">
-        <div class="lead-form-row">
-          <div class="lead-form-field">
-            <label for="pdf-email">E-Mail</label>
-            <input id="pdf-email" name="email" type="email" required autocomplete="email">
-          </div>
-        </div>
-        <button type="submit" class="btn btn-orange btn-block lead-form-submit">PDF zuschicken</button>
-        <p class="lead-form-legal">
-          <!-- TODO: GHL/Make.com Webhook -->
-          Wir nutzen deine E-Mail nur, um dir das PDF zu schicken. Details in der
-          <a href="/datenschutz.html">Datenschutzerklärung</a>.
-        </p>
-      </form>
-      <button type="button" class="btn btn-anthracite" style="width:100%;margin-top:8px" data-modal-close>Abbrechen</button>
-    </div>
-  </div>
 
   <div class="modal" data-thankyou-modal>
     <div class="modal-inner" role="dialog" aria-labelledby="thanks-title">
