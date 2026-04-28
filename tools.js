@@ -11,20 +11,42 @@
   function initMobileNav() {
     var toggle = document.querySelector("[data-nav-toggle]");
     var menu = document.querySelector("[data-mobile-menu]");
+    var navbar = document.querySelector(".navbar");
     if (!toggle || !menu) return;
+
+    function setMenuTop() {
+      // Menü-Top dynamisch an die echte Navbar-Unterkante hängen,
+      // damit es egal ist ob die Top-Bar gerade sichtbar ist oder nicht.
+      if (!navbar) return;
+      var rect = navbar.getBoundingClientRect();
+      menu.style.top = Math.max(0, rect.bottom) + "px";
+    }
+
+    function close() {
+      menu.classList.remove("is-open");
+      toggle.classList.remove("is-open");
+      toggle.setAttribute("aria-expanded", "false");
+      document.body.style.overflow = "";
+    }
+
     toggle.addEventListener("click", function () {
       var isOpen = menu.classList.toggle("is-open");
       toggle.classList.toggle("is-open", isOpen);
       toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
       document.body.style.overflow = isOpen ? "hidden" : "";
+      if (isOpen) setMenuTop();
     });
+
+    // Falls das Fenster geresized wird oder der User scrollt, Menü-Top neu setzen
+    window.addEventListener("resize", function () {
+      if (menu.classList.contains("is-open")) setMenuTop();
+    });
+    window.addEventListener("scroll", function () {
+      if (menu.classList.contains("is-open")) setMenuTop();
+    }, { passive: true });
+
     menu.querySelectorAll("a").forEach(function (link) {
-      link.addEventListener("click", function () {
-        menu.classList.remove("is-open");
-        toggle.classList.remove("is-open");
-        toggle.setAttribute("aria-expanded", "false");
-        document.body.style.overflow = "";
-      });
+      link.addEventListener("click", close);
     });
   }
 
