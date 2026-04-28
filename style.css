@@ -322,8 +322,10 @@ img{max-width:100%;display:block}
 .grundriss-card p{font-size:.78rem;color:var(--gray-500);margin:0 0 14px;line-height:1.5}
 .grundriss-card svg{width:100%;height:auto;display:block;border-radius:var(--radius-sm)}
 
-/* ===== ARTICLE-CONTENT (Pillars + Spokes) ===== */
+/* ===== ARTICLE-CONTENT (Anleitungen + Spokes) ===== */
 .article-content{max-width:720px;margin:0 auto;padding:36px 24px 60px}
+.article-content--wide{max-width:1080px}
+.article-content--wide > p,.article-content--wide > h2 + p,.article-content--wide > h3 + p{max-width:760px}
 .article-content h1{font-size:2.4rem;font-weight:800;color:var(--anthracite);margin-bottom:20px;line-height:1.15;letter-spacing:-.4px}
 .article-content h2{font-size:1.7rem;font-weight:800;color:var(--anthracite);margin:48px 0 16px;letter-spacing:-.2px;line-height:1.2}
 .article-content h3{font-size:1.25rem;font-weight:700;color:var(--anthracite);margin:32px 0 12px}
