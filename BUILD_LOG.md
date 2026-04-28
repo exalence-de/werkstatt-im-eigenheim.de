@@ -252,3 +252,59 @@ Final-CTA mit BG-Image, 4-Spalten-Footer).
 ### Offene Punkte
 
 - Lead-Funnel `/fuer-handwerker/` fehlt noch — alle LocalBoost-Klicks aus Spokes gehen aktuell ins 404. Phase 5.
+
+---
+
+## 2026-04-28 — Phase 5 — Lead-Funnel + Polishing
+
+### Geliefert
+
+- `hero-fuer-handwerker.jpg` via Nano Banana — Handwerker-Hand mit Smartphone in dunkler Werkstatt, Schmiedeofen-Glühen im Hintergrund, kein Gesicht, perfekt für die Lead-Page
+- `fuer-handwerker/index.html` — Lead-Funnel-Page (~1.500 Wörter):
+  1. Hero mit Schmerzpunkt-Ansprache + Bild
+  2. Drei Schmerzpunkt-Karten (Auftragslage, Online-Findbarkeit, Bewertungen)
+  3. LocalBoost in 3 Schritten (Analyse → Aufbau → Akquise) mit nummerierten Karten
+  4. Was-du-bekommst-Bullets (5 konkrete Punkte mit Check-Icons)
+  5. Testimonials-Platzhalter (mit `<!-- TODO: echte Testimonials -->`)
+  6. Lead-Form in dunklem Hero-Block (Anthrazit-BG): Name, PLZ, Email, Telefon optional, Branche-Dropdown
+  7. FAQ mit 5 Fragen + Schema.org FAQPage
+  - Bewusst keine Preise auf der Seite
+  - Top-Bar variiert: rechts „Zurück zu den Werkstatt-Tools" statt Handwerker-CTA (User ist auf der Lead-Page bereits Zielgruppe)
+  - Nicht in Hauptnavigation verlinkt — nur über LocalBoost-Boxes erreichbar (gewollt aus Phase 0)
+- CSS-Erweiterungen: `.pain-grid` / `.pain-card`, `.steps-grid` / `.step-card` mit Nummern-Akzent, `.benefit-list`, `.testimonial-placeholder`, `.lead-funnel-form-wrap` (dunkler Form-Block mit invertierten Input-Styles)
+- Sitemap final: 18 indexierbare URLs
+
+### Polishing
+
+- **Verlinkung:** Alle internen Links geprüft, Pillar↔Spokes↔Tools↔Hub ist konsistent
+- **Schema.org:** Article + FAQPage auf allen Pillars und Spokes; FAQPage auf Startseite + Lead-Funnel; WebSite-Schema auf Startseite
+- **Sitemap:** alle 18 produktiven URLs mit Priorities und changefreq
+- **robots.txt:** Allow all + Sitemap-Verweis
+- **Performance:** style.css 36 KB, tools.js 25 KB; einzelne HTML-Dateien 16–37 KB. Pro Seite Code-Total < 80 KB ✓ (Budget < 100 KB)
+- **Mobile:** alle Responsive-Breakpoints (860/640/520/480 px) durchspielen — Hamburger ab 860 px, Tool-Layouts stapeln sich, Hero-Image bleibt sichtbar
+- **OpenGraph:** alle Pages haben og:title, og:description, og:type, og:url, og:image
+- **Canonical:** auf jeder Page
+
+### Bekannte TODOs (vor Live-Schaltung der Lead-Funktion)
+
+| TODO | Datei | Was zu tun |
+|---|---|---|
+| Make.com / GHL Webhook | alle Forms (Lead + PDF-Capture) | Form-Action und/oder JS-Handler in `tools.js` `initLeadForms()` umbauen |
+| Echte Testimonials | `fuer-handwerker/index.html` | `<!-- TODO -->` Block ersetzen, sobald Pilot-Kunden zustimmen |
+| Impressum-Pflichtangaben | `impressum.html` | Name, Anschrift, E-Mail eintragen |
+| Datenschutz-Details | `datenschutz.html` | nach GHL/Make-Integration: konkreten Hinweis zur Datenverarbeitung ergänzen |
+| AdSense (optional) | global | wenn jemals integriert: separate Phase nach AdSense-Approval |
+| Tool-PDFs | 3 Tool-Seiten | bisher nur Email-Capture; PDF-Generierung selbst noch nicht — Make.com / Mailchimp / GHL kann das übernehmen |
+
+### Gesamt-Bilanz Phase 0–5
+
+| Kategorie | Zahl |
+|---|---|
+| Inhaltsseiten | 16 (Startseite + 2 Pillars + 3 Tools + Hub + 8 Spokes + Lead-Funnel) |
+| Service-Seiten | 2 (Impressum, Datenschutz) |
+| Bilder generiert | 13 (1 Hero, 3 Tool-Photos, 3 Tool-Icons, 1 Logo, 1 Pillar-Hero, 1 Final-CTA, 6 Spoke-Heroes, 1 Handwerker-Hero — minus 1 weil mehrere reused) |
+| HTML-Code | ~310 KB gesamt über alle Seiten |
+| CSS | 36 KB einzige globale style.css |
+| JS | 25 KB einzige globale tools.js |
+| Schema.org | Article + FAQPage auf allen Content-Pages; WebSite + FAQPage auf Startseite |
+| Conversion-Wege zu LocalBoost | 3 (LocalBoost-Box in Pillars+Spokes+Tools, Footer-CTA, direkter Lead-Funnel) |

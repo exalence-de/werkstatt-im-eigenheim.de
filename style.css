@@ -335,6 +335,41 @@ img{max-width:100%;display:block}
 .article-content th{background:var(--gray-100);font-weight:700;color:var(--anthracite)}
 .article-content blockquote{border-left:4px solid var(--orange);padding:8px 22px;margin:20px 0;color:var(--gray-600);font-style:italic}
 
+/* ===== LEAD-FUNNEL (Phase 5) ===== */
+.pain-grid{display:grid;gap:18px;margin:24px 0 8px}
+@media(min-width:760px){.pain-grid{grid-template-columns:repeat(3,1fr)}}
+.pain-card{background:#fff;border:1px solid var(--gray-200);border-radius:var(--radius-lg);padding:24px}
+.pain-card-icon{width:48px;height:48px;background:var(--orange-light);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.pain-card-icon svg{width:24px;height:24px;color:var(--orange-dark)}
+.pain-card h3{font-size:1.05rem;font-weight:700;color:var(--anthracite);margin:0 0 8px;letter-spacing:-.1px}
+.pain-card p{font-size:.92rem;color:var(--gray-600);line-height:1.6;margin:0}
+
+.steps-grid{display:grid;gap:18px;margin:24px 0}
+@media(min-width:760px){.steps-grid{grid-template-columns:repeat(3,1fr)}}
+.step-card{background:#fff;border:1px solid var(--gray-200);border-radius:var(--radius-lg);padding:24px;position:relative}
+.step-card-num{position:absolute;top:18px;right:22px;font-size:2rem;font-weight:800;color:var(--orange-light);line-height:1;letter-spacing:-1px}
+.step-card h3{font-size:1.05rem;font-weight:700;color:var(--anthracite);margin:0 0 10px;padding-right:50px}
+.step-card p{font-size:.92rem;color:var(--gray-600);line-height:1.6;margin:0}
+
+.benefit-list{list-style:none;padding:0;margin:24px 0}
+.benefit-list li{display:flex;align-items:flex-start;gap:14px;padding:14px 0;border-bottom:1px solid var(--gray-200);font-size:.97rem;color:var(--gray-700);line-height:1.6}
+.benefit-list li:last-child{border-bottom:none}
+.benefit-list li svg{width:24px;height:24px;color:var(--orange);flex-shrink:0;margin-top:1px}
+.benefit-list strong{color:var(--anthracite)}
+
+.testimonial-placeholder{background:var(--gray-100);border:1px dashed var(--gray-300);border-radius:var(--radius-lg);padding:32px 24px;text-align:center;margin:32px 0;color:var(--gray-500);font-style:italic;font-size:.92rem}
+
+.lead-funnel-form-wrap{background:var(--anthracite);color:#fff;border-radius:var(--radius-lg);padding:36px 30px;margin:40px 0;box-shadow:var(--shadow-lg)}
+@media(max-width:640px){.lead-funnel-form-wrap{padding:26px 22px}}
+.lead-funnel-form-wrap h2{color:#fff;margin:0 0 8px;font-size:1.6rem;letter-spacing:-.2px}
+.lead-funnel-form-wrap > p{color:rgba(255,255,255,.72);margin-bottom:24px;font-size:.97rem}
+.lead-funnel-form-wrap .lead-form{background:transparent;border:none;padding:0}
+.lead-funnel-form-wrap .lead-form-field label{color:rgba(255,255,255,.85)}
+.lead-funnel-form-wrap .lead-form-field input,.lead-funnel-form-wrap .lead-form-field select{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.18);color:#fff}
+.lead-funnel-form-wrap .lead-form-field input::placeholder{color:rgba(255,255,255,.35)}
+.lead-funnel-form-wrap .lead-form-legal{color:rgba(255,255,255,.55)}
+.lead-funnel-form-wrap .lead-form-legal a{color:rgba(255,255,255,.85)}
+
 /* ===== TOOL-SHELL & TOOL-FORM (Phase 3) ===== */
 .tool-shell{background:#fff;border:1px solid var(--gray-200);border-radius:var(--radius-lg);padding:28px;margin:32px 0;box-shadow:var(--shadow-sm)}
 @media(max-width:640px){.tool-shell{padding:20px}}
